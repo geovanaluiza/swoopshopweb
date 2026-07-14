@@ -88,6 +88,10 @@ const onSubmit = async () => {
           <p class="final-trust">
             Free · No obligation · 1-day reply
           </p>
+          <p class="final-verse" aria-label="Biblical verse">
+            <em>"Pois para Deus nada é impossível."</em><br />
+            <span>— Lucas 1:37</span>
+          </p>
         </form>
       </div>
     </div>
@@ -122,5 +126,23 @@ const onSubmit = async () => {
   color: rgba(255,255,255,.5);
   letter-spacing: var(--letter-spacing-4);
   text-transform: uppercase;
+}
+.final-verse {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  font-size: var(--font-size-2);
+  color: rgba(255,255,255,.45);
+  line-height: var(--line-height-4);
+}
+.final-verse em {
+  font-style: italic;
+  color: rgba(255,255,255,.65);
+}
+.final-verse span {
+  font-size: var(--font-size-1);
+  letter-spacing: var(--letter-spacing-4);
+  opacity: .7;
 }
 </style>
