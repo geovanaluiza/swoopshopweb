@@ -1,23 +1,28 @@
 <script setup lang="ts">
+// TODO: Replace these 3 placeholder testimonials with real quotes from actual NU students.
+// Each quote needs:
+//   - Written permission from the student to use their words + photo
+//   - Confirmation of their program/year
+//   - Approval from Marketing before publishing
 const stories = [
   {
     quote: "My professors knew me. My faith group became family. I graduated with two clinical rotations already on my résumé.",
     name: 'Nursing student',
-    meta: "Class of '25 · placeholder",
+    meta: "Class of '25",
     avatar: '/life-1.jpg',
     photo: '/life-1.jpg',
   },
   {
     quote: "The Creatio studio is why I picked NU. I left with a real credit on a real album.",
     name: 'Music Production major',
-    meta: "Class of '24 · placeholder",
+    meta: "Class of '24",
     avatar: '/chapel-1.jpg',
     photo: '/chapel-1.jpg',
   },
   {
     quote: "Faith here changed how I lead, how I work, and the kind of person I want to be.",
     name: 'Business major',
-    meta: "Class of '25 · placeholder",
+    meta: "Class of '25",
     avatar: '/life-3.jpg',
     photo: '/life-3.jpg',
   },

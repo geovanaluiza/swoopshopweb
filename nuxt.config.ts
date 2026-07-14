@@ -35,6 +35,14 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/tokens.css', '~/assets/css/main.css'],
 
+  runtimeConfig: {
+    public: {
+      // TODO (Marketing): set FORMSPREE_URL=https://formspree.io/f/YOUR_FORM_ID in .env
+      // This is the endpoint for all lead form submissions (hero form, mini CTAs, scholarship gate)
+      FORMSPREE_URL: '',
+    }
+  },
+
   // Static-site generation so the page can be deployed as a plain landing page.
   nitro: {
     preset: 'static'

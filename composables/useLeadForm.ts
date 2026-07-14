@@ -1,3 +1,10 @@
+/* TODO (Marketing): Replace FORMSPREE_URL with your Formspree endpoint ID.
+   Sign up free at https://formspree.io, create a form, and paste your endpoint URL here.
+   Example: https://formspree.io/f/xwkgpqrv
+
+   The same endpoint handles both the hero form and the scholarship explorer gate.
+   When the real CRM endpoint (TargetX/Salesforce) is available, replace the
+   Formspree fetch below with a fetch() to that URL and keep the same body shape. */
 export interface LeadPayload {
   firstName: string
   lastName: string
@@ -20,6 +27,8 @@ const PROGRAM_MAP: Record<string, string> = {
 
 export const useLeadForm = () => {
   const route = useRoute()
+  const config = useRuntimeConfig()
+  const formspreeUrl = (config.public as { FORMSPREE_URL?: string }).FORMSPREE_URL ?? ''
 
   const state = reactive({
     firstName: '',
@@ -71,7 +80,16 @@ export const useLeadForm = () => {
     if (!validateStep(2)) return false
     status.value = 'loading'
     try {
-      await $fetch('/api/lead', { method: 'POST', body: { ...state } })
+      if (formspreeUrl) {
+        await fetch(formspreeUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ ...state }),
+        })
+      } else {
+        // TODO: remove this fallback — set FORMSPREE_URL in .env
+        await $fetch('/api/lead', { method: 'POST', body: { ...state } })
+      }
       status.value = 'success'
       return true
     } catch (e) {

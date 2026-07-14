@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{ ctaLabel?: string }>()
+const config = useRuntimeConfig()
+const formspreeUrl = (config.public as { FORMSPREE_URL?: string }).FORMSPREE_URL ?? ''
 const email = ref('')
 const status = ref<'idle' | 'loading' | 'success' | 'error'>('idle')
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -8,10 +10,18 @@ const submit = async () => {
   if (!emailRe.test(email.value)) return
   status.value = 'loading'
   try {
-    await $fetch('/api/lead', {
-      method: 'POST',
-      body: { email: email.value, program: '', consent: true, firstName: '', lastName: '', modality: 'Both' }
-    })
+    if (formspreeUrl) {
+      await fetch(formspreeUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ email: email.value, program: '', consent: true, firstName: '', lastName: '', modality: 'Both' }),
+      })
+    } else {
+      await $fetch('/api/lead', {
+        method: 'POST',
+        body: { email: email.value, program: '', consent: true, firstName: '', lastName: '', modality: 'Both' },
+      })
+    }
     status.value = 'success'
   } catch {
     status.value = 'error'

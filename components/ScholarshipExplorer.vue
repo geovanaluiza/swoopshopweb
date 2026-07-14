@@ -41,10 +41,20 @@ const submitGate = async () => {
   if (!emailRe.test(gateEmail.value)) return
   gateStatus.value = 'loading'
   try {
-    await $fetch('/api/lead', {
-      method: 'POST',
-      body: { email: gateEmail.value, firstName: '', lastName: '', program: '', consent: true, modality: 'Both' }
-    })
+    const config = useRuntimeConfig()
+    const formspreeUrl = (config.public as { FORMSPREE_URL?: string }).FORMSPREE_URL ?? ''
+    if (formspreeUrl) {
+      await fetch(formspreeUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ email: gateEmail.value, firstName: '', lastName: '', program: 'Scholarship Explorer', consent: true, modality: 'Both' }),
+      })
+    } else {
+      await $fetch('/api/lead', {
+        method: 'POST',
+        body: { email: gateEmail.value, firstName: '', lastName: '', program: 'Scholarship Explorer', consent: true, modality: 'Both' },
+      })
+    }
     showPackage.value = true
     gateStatus.value = 'success'
   } catch {

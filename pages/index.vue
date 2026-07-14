@@ -1,14 +1,11 @@
 <script setup lang="ts">
 import { useReveal } from '~/composables/useReveal'
-import { useCountUp } from '~/composables/useCountUp'
 
 const { observe: observeReveal } = useReveal()
-const { observe: observeCount } = useCountUp()
 
 onMounted(() => {
   nextTick(() => {
     observeReveal()
-    observeCount()
   })
 })
 </script>

@@ -20,23 +20,21 @@ const onNavClick = (e: MouseEvent, id: string) => {
         </div>
       </div>
       <nav class="foot-nav" aria-label="Footer">
-        <a href="#">Admissions</a>
-        <a href="#">Financial Aid</a>
-        <a href="#">Athletics</a>
-        <a href="#">Campus Map</a>
-        <a href="#">Privacy</a>
-        <a href="#">Title IX</a>
+        <a href="https://www.northwestu.edu/admissions" target="_blank" rel="noopener">Admissions</a>
+        <a href="https://www.northwestu.edu/financial-aid" target="_blank" rel="noopener">Financial Aid</a>
+        <a href="https://nueagles.com" target="_blank" rel="noopener">Athletics</a>
+        <a href="https://www.northwestu.edu/about/locations" target="_blank" rel="noopener">Campus Map</a>
+        <a href="https://www.northwestu.edu/privacy" target="_blank" rel="noopener">Privacy</a>
+        <!-- TODO: confirm correct Title IX page URL before publishing -->
+        <a href="https://www.northwestu.edu/about/consumer-information" target="_blank" rel="noopener">Title IX</a>
       </nav>
       <div class="foot-social" aria-label="Social media">
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="Facebook">FB</a>
-        <a href="#" aria-label="YouTube">YT</a>
+        <a href="https://www.instagram.com/northwestu" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://www.facebook.com/northwestu" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        <a href="https://www.youtube.com/northwestuniversity" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
       </div>
     </div>
     <p class="foot-legal">© {{ year }} Northwest University. All rights reserved.</p>
   </footer>
 
-  <a href="#request" class="mobile-sticky" aria-label="Request info" @click="(e) => onNavClick(e, '#request')">
-    Request Info
-  </a>
 </template>
