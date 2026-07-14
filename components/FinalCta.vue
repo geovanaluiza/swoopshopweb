@@ -37,6 +37,10 @@ const onSubmit = async () => {
     <div class="container final-grid">
       <div class="final-copy reveal">
         <h2 class="section-title">One packet. Zero pressure.</h2>
+        <p class="final-verse" aria-label="Biblical verse">
+          <em>"For nothing is impossible with God."</em>
+          <span>— Luke 1:37</span>
+        </p>
       </div>
 
       <div class="reveal">
@@ -88,10 +92,6 @@ const onSubmit = async () => {
           <p class="final-trust">
             Free · No obligation · 1-day reply
           </p>
-          <p class="final-verse" aria-label="Biblical verse">
-            <em>"Pois para Deus nada é impossível."</em><br />
-            <span>— Lucas 1:37</span>
-          </p>
         </form>
       </div>
     </div>
@@ -128,21 +128,20 @@ const onSubmit = async () => {
   text-transform: uppercase;
 }
 .final-verse {
-  text-align: center;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,.1);
+  margin-top: 16px;
   font-size: var(--font-size-2);
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.4);
   line-height: var(--line-height-4);
 }
 .final-verse em {
   font-style: italic;
-  color: rgba(255,255,255,.65);
+  color: rgba(255,255,255,.55);
 }
 .final-verse span {
+  display: block;
   font-size: var(--font-size-1);
   letter-spacing: var(--letter-spacing-4);
-  opacity: .7;
+  opacity: .65;
+  margin-top: 4px;
 }
 </style>
