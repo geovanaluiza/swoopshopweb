@@ -5,7 +5,7 @@ import LeadForm from './LeadForm.vue'
 <template>
   <section class="hero">
     <div class="hero-media" aria-hidden="true">
-      <img src="/hero.jpg" alt="" loading="eager" fetchpriority="high" />
+      <img src="/snow-lake.jpg" alt="" loading="eager" fetchpriority="high" />
       <div class="hero-media-scrim"></div>
     </div>
 
