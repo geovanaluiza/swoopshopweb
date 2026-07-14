@@ -1,0 +1,84 @@
+/* =============================================================
+   Northwest University — Design System tokens
+   Mirror of the official NU design system. Keep in sync.
+   ============================================================= */
+
+:root {
+  /* ---- Color tokens (per NU design system) ---- */
+  --nu-blue:      #0068bb;
+  --nu-alt:       #148dcd;
+  --nu-sky:       #95c5ea;
+  --nu-skylight:  #b4d4f0;
+  --nu-powder:    #eaf4fb;
+  --nu-navy:      #034C87;
+  --nu-midnight:  #00263d;
+  --nu-evergreen: #04505c;
+  --nu-leaf:      #44ba82;
+  --nu-gold:      #85754e;
+  --nu-tour:      #fbd945;
+  --nu-amber:     #ffbc2d;
+  --nu-cloud:     #f1f2f2;
+  --nu-wisp:      #f9f9f9;
+
+  /* ---- Type families ---- */
+  --font-family-sans-serif: proxima-nova, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-serif: zenon, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+
+  /* ---- Font size scale ---- */
+  --font-size-1: clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem);
+  --font-size-2: clamp(0.875rem, 0.84rem + 0.18vw, 1rem);
+  --font-size-3: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --font-size-4: clamp(1.125rem, 1.08rem + 0.22vw, 1.25rem);
+  --font-size-5: clamp(1.25rem, 1.2rem + 0.25vw, 1.375rem);
+  --font-size-6: clamp(1.375rem, 1.32rem + 0.28vw, 1.5rem);
+
+  /* ---- Headline scale ---- */
+  --headline-1: clamp(2rem, 1.6rem + 2vw, 3rem);
+  --headline-2: clamp(2.25rem, 1.8rem + 2.25vw, 4rem);
+  --headline-3: clamp(2.5rem, 1.9rem + 3vw, 5rem);
+  --headline-4: clamp(3rem, 2.1rem + 4.5vw, 6rem);
+
+  /* ---- Letter spacing ---- */
+  --letter-spacing-3: -0.035em;
+  --letter-spacing-4: -0.025em;
+  --letter-spacing-5:  0em;
+  --letter-spacing-7:  0.035em;
+  --letter-spacing-8:  0.05em;
+  --letter-spacing-10: 0.1em;
+
+  /* ---- Line height ---- */
+  --line-height-2: 1.2;
+  --line-height-3: 1.3;
+  --line-height-4: 1.45;
+  --line-height-5: 1.6;
+
+  /* ---- Size (one-off spacing primitives) ---- */
+  --size-1: 8px;  --size-2: 12px; --size-3: 16px; --size-4: 20px; --size-5: 24px;
+  --size-6: 32px; --size-7: 42px; --size-8: 52px; --size-9: 62px; --size-10: 72px;
+
+  /* ---- Space scale ---- */
+  --space-3: 9px;  --space-4: 13px; --space-5: 17px; --space-6: 23px;
+  --space-7: 30px; --space-8: 38px; --space-9: 50px; --space-10: 72px;
+
+  /* ---- Border radius ---- */
+  --border-radius-3: 4px;  --border-radius-4: 6px;  --border-radius-5: 8px;
+  --border-radius-6: 12px; --border-radius-7: 16px; --border-radius-8: 20px;
+  --border-radius-9: 24px; --border-radius-10: 9999px;
+
+  /* ---- Shadow ---- */
+  --box-shadow-2: 0 1px 2px rgba(0, 38, 61, .06), 0 4px 12px rgba(0, 38, 61, .06);
+  --box-shadow-5: 0 1px 3px rgba(0, 38, 61, .08), 0 8px 24px rgba(0, 38, 61, .10);
+  --box-shadow-7: 0 10px 30px rgba(0, 38, 61, .14);
+  --box-shadow-8: 0 24px 60px rgba(0, 38, 61, .22);
+
+  /* ---- Transitions ---- */
+  --transition-4: 150ms; --transition-5: 200ms; --transition-6: 250ms; --transition-7: 300ms;
+
+  /* ---- Z-index ---- */
+  --z-index-1: 1; --z-index-3: 3; --z-index-5: 5; --z-index-6: 60; --z-index-7: 70;
+
+  /* ---- Container ---- */
+  --container: 1120px;
+  --gutter: 24px;
+}
