@@ -13,7 +13,7 @@ const onNavClick = (e: MouseEvent, id: string) => {
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="foot-brand">
-        <span class="brand-mark" aria-hidden="true">NU</span>
+        <img class="brand-mark" src="/nu-shield.png" alt="" />
         <div>
           <strong>Northwest University</strong>
           <p>5520 108th Ave NE, Kirkland, WA 98033</p>

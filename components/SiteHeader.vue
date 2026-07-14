@@ -20,7 +20,7 @@ const onNavClick = (e: MouseEvent, id: string) => {
   <header id="siteHeader" class="site-header">
     <div class="container header-inner">
       <NuxtLink to="/" class="brand" aria-label="Northwest University home">
-        <span class="brand-mark" aria-hidden="true">NU</span>
+        <img class="brand-mark" src="/nu-shield.png" alt="" />
         <span class="brand-name">Northwest University</span>
       </NuxtLink>
       <nav class="primary-nav" aria-label="Primary">
