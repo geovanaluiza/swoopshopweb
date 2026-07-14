@@ -16,9 +16,8 @@ defineExpose({ form, root })
 <template>
   <aside ref="root" class="card form-card reveal" id="request" aria-labelledby="formTitle">
     <div class="form-card-header">
-      <p class="form-eyebrow">Free · No commitment</p>
-      <h2 id="formTitle" class="form-title">Get my free info packet</h2>
-      <p class="form-sub">Tell us a bit about you. We'll send a tailored packet within 1 business day.</p>
+      <p class="form-eyebrow">Free · 1-day reply</p>
+      <h2 id="formTitle" class="form-title">Get my info packet</h2>
     </div>
 
     <form id="leadForm" class="lead-form" novalidate @submit.prevent="onSubmit">

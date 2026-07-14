@@ -22,7 +22,7 @@ onMounted(() => {
       <HeroSection />
       <TrustBar />
       <WhySection />
-      <ProgramsSection />
+      <BigPhotoSection />
       <LifeSection />
       <StoriesSection />
       <FinalCta />

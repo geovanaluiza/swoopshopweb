@@ -17,11 +17,7 @@ const onSubmit = () => {
   <section class="final-cta" id="final-cta">
     <div class="container final-grid">
       <div class="final-copy reveal">
-        <p class="eyebrow eyebrow-light">Ready when you are</p>
-        <h2 class="section-title">One packet. Zero pressure. All the answers.</h2>
-        <p class="section-sub section-sub-light">
-          Tuition, scholarships, application steps, faith community — we'll send a packet tailored to the program you choose.
-        </p>
+        <h2 class="section-title">One packet. Zero pressure.</h2>
       </div>
 
       <form id="leadFormMini" class="mini-form reveal" novalidate @submit.prevent="onSubmit">
