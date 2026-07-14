@@ -25,6 +25,7 @@ const onNavClick = (e: MouseEvent, id: string) => {
       </NuxtLink>
       <nav class="primary-nav" aria-label="Primary">
         <a href="#why" @click="(e) => onNavClick(e, '#why')">Why NU</a>
+        <a href="#sch" @click="(e) => onNavClick(e, '#sch')">Scholarships</a>
         <a href="#life" @click="(e) => onNavClick(e, '#life')">Campus Life</a>
         <a href="#stories" @click="(e) => onNavClick(e, '#stories')">Stories</a>
       </nav>
