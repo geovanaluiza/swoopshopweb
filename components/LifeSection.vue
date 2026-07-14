@@ -54,6 +54,10 @@ const openGallery = () => {
       <header class="section-head reveal">
         <h2 class="section-title section-title-light">A 56-acre classroom.</h2>
         <p class="life-sub">From chapel worship to quiet forest trails, campus life happens everywhere here.</p>
+        <p class="life-verse" aria-label="Biblical verse">
+          <em>"For nothing is impossible with God."</em>
+          <span>— Luke 1:37</span>
+        </p>
       </header>
 
       <div class="life-photos">

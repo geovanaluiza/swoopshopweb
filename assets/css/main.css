@@ -519,6 +519,21 @@ ul { margin: 0; padding: 0; list-style: none; }
   line-height: var(--line-height-4);
   max-width: 52ch;
 }
+.life-verse {
+  margin-top: 14px;
+  font-size: var(--font-size-2);
+  color: rgba(255, 255, 255, 0.35);
+  line-height: var(--line-height-4);
+}
+.life-verse em {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+}
+.life-verse span {
+  font-size: var(--font-size-1);
+  letter-spacing: var(--letter-spacing-4);
+  opacity: .65;
+}
 
 .life-photos {
   display: grid;
