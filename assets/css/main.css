@@ -654,6 +654,43 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: var(--nu-midnight); color: #fff;
   position: relative; overflow: hidden;
 }
+.final-grid {
+  display: grid;
+  gap: clamp(32px, 5vw, 56px);
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .final-grid { grid-template-columns: 1fr 1fr; gap: clamp(48px, 6vw, 80px); }
+}
+.final-copy .section-title { color: #fff; }
+
+/* Final CTA mini form (reuses mini-form styles) */
+.final-cta .mini-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.final-cta .mini-form input,
+.final-cta .mini-form select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: var(--border-radius-4);
+  background: rgba(255,255,255,.1);
+  color: #fff;
+  font-size: var(--font-size-2);
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.final-cta .mini-form input::placeholder { color: rgba(255,255,255,.45); }
+.final-cta .mini-form input:focus,
+.final-cta .mini-form select:focus {
+  border-color: var(--nu-tour);
+  box-shadow: 0 0 0 3px rgba(251,217,69,.2);
+}
+.final-cta .mini-form select option { background: var(--nu-midnight); color: #fff; }
 
 /* Big photo — full-bleed lifestyle shot between sections */
 .big-photo {
