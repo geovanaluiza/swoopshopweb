@@ -1,10 +1,3 @@
-/* =============================================================
-   useLeadForm — form state, validation, and simulated submit
-   Replace `submit` body with a real fetch() to your CRM / ESP
-   when the endpoint is available. Until then this just resolves
-   after a short delay so the UX is fully exercisable.
-   ============================================================= */
-
 export interface LeadPayload {
   firstName: string
   lastName: string
@@ -15,7 +8,19 @@ export interface LeadPayload {
   consent: boolean
 }
 
+const PROGRAM_MAP: Record<string, string> = {
+  nursing: 'Nursing (BSN)',
+  'computer-science': 'Computer Science',
+  business: 'Business',
+  'music-production': 'Music Production',
+  psychology: 'Psychology',
+  'physician-assistant': 'Physician Assistant Studies',
+  undecided: 'Undecided — help me explore',
+}
+
 export const useLeadForm = () => {
+  const route = useRoute()
+
   const state = reactive({
     firstName: '',
     lastName: '',
@@ -28,27 +33,45 @@ export const useLeadForm = () => {
 
   const errors = reactive<Record<string, string>>({})
   const status = ref<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const step = ref(1)
 
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-  const validate = (): boolean => {
+  if (route.query.program) {
+    const key = String(route.query.program).toLowerCase()
+    const mapped = PROGRAM_MAP[key]
+    if (mapped) state.program = mapped
+    else if (route.query.program) state.program = String(route.query.program)
+  }
+
+  const validateStep = (s: number): boolean => {
     Object.keys(errors).forEach((k) => delete errors[k])
-    if (!state.firstName.trim()) errors.firstName = 'Required'
-    if (!state.lastName.trim())  errors.lastName  = 'Required'
-    if (!state.email.trim())     errors.email     = 'Required'
-    else if (!emailRe.test(state.email)) errors.email = 'Enter a valid email'
-    if (!state.program)          errors.program   = 'Choose a program'
-    if (!state.consent)          errors.consent   = 'Please agree to be contacted'
+    if (s === 1) {
+      if (!state.firstName.trim()) errors.firstName = 'Required'
+      if (!state.lastName.trim())  errors.lastName  = 'Required'
+      if (!state.email.trim())     errors.email     = 'Required'
+      else if (!emailRe.test(state.email)) errors.email = 'Enter a valid email'
+      if (!state.program)          errors.program   = 'Choose a program'
+      if (!state.consent)          errors.consent   = 'Please agree to be contacted'
+    }
+    if (s === 2) {
+      if (!state.email.trim())     errors.email   = 'Required'
+      else if (!emailRe.test(state.email)) errors.email = 'Enter a valid email'
+    }
     return Object.keys(errors).length === 0
   }
 
+  const nextStep = () => {
+    if (validateStep(1)) step.value = 2
+  }
+
+  const prevStep = () => { step.value = 1 }
+
   const submit = async () => {
-    if (!validate()) return false
+    if (!validateStep(2)) return false
     status.value = 'loading'
     try {
-      /* TODO: replace with real endpoint.
-         await $fetch('/api/lead', { method: 'POST', body: { ...state } }) */
-      await new Promise((r) => setTimeout(r, 900))
+      await $fetch('/api/lead', { method: 'POST', body: { ...state } })
       status.value = 'success'
       return true
     } catch (e) {
@@ -66,11 +89,10 @@ export const useLeadForm = () => {
     state.modality  = 'On Campus'
     state.consent   = false
     status.value    = 'idle'
+    step.value      = 1
   }
 
-  const setProgram = (title: string) => {
-    state.program = title
-  }
+  const setProgram = (title: string) => { state.program = title }
 
-  return { state, errors, status, validate, submit, reset, setProgram }
+  return { state, errors, status, step, validateStep, nextStep, prevStep, submit, reset, setProgram }
 }

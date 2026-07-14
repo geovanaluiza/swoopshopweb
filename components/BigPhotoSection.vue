@@ -1,8 +1,8 @@
 <template>
   <section class="big-photo" aria-hidden="true">
     <iframe
-      src="https://www.youtube.com/embed/Ye1KgGUCREs?autoplay=1&mute=1&loop=1&playlist=Ye1KgGUCREs&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
-      allow="autoplay; encrypted-media"
+      src="https://www.youtube.com/embed/Ye1KgGUCREs?autoplay=1&loop=1&playlist=Ye1KgGUCREs&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1"
+      allow="autoplay; fullscreen"
       allowfullscreen
       title="Northwest University"
     ></iframe>
@@ -25,7 +25,6 @@
   width: 100%;
   height: 100%;
   border: 0;
-  pointer-events: none;
 }
 @media (min-width: 960px) {
   .big-photo { height: 75vh; min-height: 520px; }

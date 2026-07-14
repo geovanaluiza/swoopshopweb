@@ -23,7 +23,7 @@ export default defineNuxtConfig({
           content: 'A modern Christian university on 56 acres in Kirkland, WA. Real-world internships in every program.'
         },
         { property: 'og:type', content: 'website' },
-        { property: 'og:image', content: '/hero.jpg' }
+        { property: 'og:image', content: '/snow-lake.jpg' }
       ],
       link: [
         { rel: 'preconnect', href: 'https://use.typekit.net', crossorigin: '' },

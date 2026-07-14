@@ -6,8 +6,6 @@ const { observe: observeReveal } = useReveal()
 const { observe: observeCount } = useCountUp()
 
 onMounted(() => {
-  // Wait one tick so all child components have mounted and
-  // their `reveal` / `counter` nodes exist in the DOM.
   nextTick(() => {
     observeReveal()
     observeCount()
@@ -21,13 +19,16 @@ onMounted(() => {
     <main>
       <HeroSection />
       <TrustBar />
+      <MiniCta ctaLabel="Want a quick overview? Get the free info packet." />
       <WhySection />
       <BigPhotoSection />
       <ScholarshipExplorer />
       <LifeSection />
       <StoriesSection />
+      <MiniCta ctaLabel="Have questions? We'll reply within 1 business day." />
       <FinalCta />
     </main>
     <SiteFooter />
+    <StickyMobileCta />
   </div>
 </template>

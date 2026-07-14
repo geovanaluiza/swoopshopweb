@@ -16,6 +16,27 @@ const selectedScholarships = computed(() =>
     .map((id) => SCHOLARSHIPS.find((s) => s.id === id))
     .filter(Boolean) as typeof SCHOLARSHIPS
 )
+
+const gateEmail = ref('')
+const gateStatus = ref<'idle' | 'loading' | 'success' | 'error'>('idle')
+const showPackage = ref(false)
+const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const submitGate = async () => {
+  if (!emailRe.test(gateEmail.value)) return
+  gateStatus.value = 'loading'
+  try {
+    await $fetch('/api/lead', {
+      method: 'POST',
+      body: { email: gateEmail.value, firstName: '', lastName: '', program: '', consent: true, modality: 'Both' }
+    })
+    showPackage.value = true
+    gateStatus.value = 'success'
+  } catch {
+    showPackage.value = true
+    gateStatus.value = 'success'
+  }
+}
 </script>
 
 <template>
@@ -162,38 +183,72 @@ const selectedScholarships = computed(() =>
         <aside class="sch-pkg">
           <header>
             <h3>Your Scholarship Package</h3>
-            <span class="pkg-count">{{ selectedScholarships.length }} selected</span>
+            <span v-if="showPackage" class="pkg-count">{{ selectedScholarships.length }} selected</span>
           </header>
 
-          <div class="pkg-bar">
-            <div class="pkg-bar-track">
-              <div class="pkg-bar-fill" :style="{ width: coverage + '%' }"></div>
-            </div>
-            <div class="pkg-bar-meta">
-              <span>{{ coverage }}% covered</span>
-              <span>{{ fmt(remaining) }} remaining / yr</span>
-            </div>
+          <!-- Email gate -->
+          <div v-if="!showPackage" class="pkg-gate">
+            <p class="pkg-gate-copy">
+              Enter your email to unlock your personalized scholarship estimate — we'll also send you the full breakdown.
+            </p>
+            <form v-if="gateStatus !== 'success'" class="pkg-gate-form" novalidate @submit.prevent="submitGate">
+              <input
+                v-model="gateEmail"
+                type="email"
+                autocomplete="email"
+                placeholder="your@email.com"
+                required
+              />
+              <button
+                type="submit"
+                class="btn btn-primary btn-block"
+                :class="{ 'is-loading': gateStatus === 'loading' }"
+                :disabled="gateStatus === 'loading'"
+              >
+                <span class="btn-label">See My Estimate</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+              </button>
+            </form>
+            <p v-else class="pkg-gate-success">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              Check your inbox — here's your estimate!
+            </p>
+            <p class="pkg-gate-note">Free · No obligation · We'll never share your info</p>
           </div>
 
-          <ul v-if="selectedScholarships.length" class="pkg-list" role="list">
-            <li v-for="s in selectedScholarships" :key="s.id">
-              <div>
-                <strong>{{ s.title }}</strong>
-                <span class="pkg-cat">{{ s.category }}</span>
+          <template v-else>
+            <div class="pkg-bar">
+              <div class="pkg-bar-track">
+                <div class="pkg-bar-fill" :style="{ width: coverage + '%' }"></div>
               </div>
-              <div class="pkg-right">
-                <span class="pkg-amt">{{ fmt(amountOf(s)) }}</span>
-                <button class="pkg-remove" type="button" @click="toggle(s)" aria-label="Remove">×</button>
+              <div class="pkg-bar-meta">
+                <span>{{ coverage }}% covered</span>
+                <span>{{ fmt(remaining) }} remaining / yr</span>
               </div>
-            </li>
-          </ul>
-          <p v-else class="pkg-empty">
-            No scholarships selected yet.<br />
-            Browse the options and add scholarships you qualify for!<br />
-            <span class="pkg-tip">Tip: Click any scholarship card to add it</span>
-          </p>
+            </div>
 
-          <button v-if="selectedIds.length" class="pkg-reset" type="button" @click="reset">Reset package</button>
+            <ul v-if="selectedScholarships.length" class="pkg-list" role="list">
+              <li v-for="s in selectedScholarships" :key="s.id">
+                <div>
+                  <strong>{{ s.title }}</strong>
+                  <span class="pkg-cat">{{ s.category }}</span>
+                </div>
+                <div class="pkg-right">
+                  <span class="pkg-amt">{{ fmt(amountOf(s)) }}</span>
+                  <button class="pkg-remove" type="button" @click="toggle(s)" aria-label="Remove">×</button>
+                </div>
+              </li>
+            </ul>
+            <p v-else class="pkg-empty">
+              No scholarships selected yet.<br />
+              Browse the options and add scholarships you qualify for!<br />
+              <span class="pkg-tip">Tip: Click any scholarship card to add it</span>
+            </p>
+
+            <button v-if="selectedIds.length" class="pkg-reset" type="button" @click="reset">Reset package</button>
+          </template>
         </aside>
       </div>
 
