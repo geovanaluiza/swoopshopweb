@@ -534,6 +534,17 @@ ul { margin: 0; padding: 0; list-style: none; }
   letter-spacing: var(--letter-spacing-4);
   opacity: .65;
 }
+.life-verse-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: var(--font-size-2);
+  font-weight: 700;
+  color: rgba(255,255,255,.5);
+  text-decoration: none;
+  letter-spacing: var(--letter-spacing-4);
+  transition: color .2s ease;
+}
+.life-verse-link:hover { color: rgba(255,255,255,.9); }
 
 .life-photos {
   display: grid;

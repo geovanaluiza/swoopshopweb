@@ -58,6 +58,9 @@ const openGallery = () => {
           <em>"For nothing is impossible with God."</em>
           <span>— Luke 1:37</span>
         </p>
+        <a class="life-verse-link" href="https://www.instagram.com/northwestu" target="_blank" rel="noopener">
+          See what life looks like at NU →
+        </a>
       </header>
 
       <div class="life-photos">
