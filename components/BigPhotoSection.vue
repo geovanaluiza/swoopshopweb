@@ -17,7 +17,7 @@
   min-height: 360px;
   max-height: 720px;
   overflow: hidden;
-  background: var(--nu-powder);
+  background: var(--bg-base);
 }
 .big-photo iframe {
   position: absolute;

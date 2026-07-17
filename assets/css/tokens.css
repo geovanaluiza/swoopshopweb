@@ -1,6 +1,7 @@
 /* =============================================================
    Northwest University — Design System tokens
    Mirror of the official NU design system. Keep in sync.
+   Dark immersive theme applied as default for explorenu.
    ============================================================= */
 
 :root {
@@ -11,7 +12,7 @@
   --nu-skylight:  #b4d4f0;
   --nu-powder:    #eaf4fb;
   --nu-navy:      #034C87;
-  --nu-midnight:  #00263d;
+  --nu-midnight:  #001729;
   --nu-evergreen: #04505c;
   --nu-leaf:      #44ba82;
   --nu-gold:      #85754e;
@@ -72,6 +73,11 @@
   --box-shadow-7: 0 10px 30px rgba(0, 38, 61, .14);
   --box-shadow-8: 0 24px 60px rgba(0, 38, 61, .22);
 
+  /* ---- Glow (gold accent for immersive dark mode) ---- */
+  --glow-gold: 0 0 20px rgba(251, 217, 69, .35);
+  --glow-blue:  0 0 20px rgba(0, 104, 187, .35);
+  --glow-leaf:  0 0 20px rgba(68, 186, 130, .35);
+
   /* ---- Transitions ---- */
   --transition-4: 150ms; --transition-5: 200ms; --transition-6: 250ms; --transition-7: 300ms;
 
@@ -81,4 +87,19 @@
   /* ---- Container ---- */
   --container: 1120px;
   --gutter: 24px;
+
+  /* ---- Default theme: dark immersive ---- */
+  --bg-base:       #001729;
+  --bg-raised:     #00263d;
+  --bg-card:      rgba(0, 38, 61, 0.5);
+  --bg-glass:      rgba(0, 38, 61, 0.55);
+  --text-primary:  #f0f4f8;
+  --text-secondary: rgba(240, 244, 248, 0.65);
+  --text-muted:    rgba(240, 244, 248, 0.4);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-mid:    rgba(255, 255, 255, 0.14);
+  --accent-gold:   #fbd945;
+  --accent-blue:   #3a9fe8;
+  --accent-leaf:   #44ba82;
+  --accent-glow:   rgba(251, 217, 69, .25);
 }

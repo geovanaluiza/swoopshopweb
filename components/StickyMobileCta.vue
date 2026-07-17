@@ -31,13 +31,14 @@ onMounted(() => {
   display: block;
   text-align: center;
   padding: 16px;
-  background: var(--nu-midnight);
+  background: var(--bg-base);
   color: #fff;
   font-weight: 700;
   font-size: var(--font-size-2);
   letter-spacing: var(--letter-spacing-4);
   text-decoration: none;
-  box-shadow: 0 -4px 24px rgba(0,38,61,.2);
+  box-shadow: 0 -4px 24px rgba(0,0,0,.4);
+  border-top: 1px solid var(--border-subtle);
 }
 .sticky-slide-enter-active,
 .sticky-slide-leave-active { transition: transform .3s ease; }

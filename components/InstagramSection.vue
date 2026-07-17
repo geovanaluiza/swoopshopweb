@@ -24,7 +24,7 @@ onMounted(() => {
 <style scoped>
 .insta {
   padding: clamp(80px, 10vw, 120px) 0;
-  background: var(--nu-wisp);
+  background: var(--bg-raised);
   text-align: center;
 }
 .insta .section-head { margin-bottom: clamp(32px, 5vw, 48px); }
