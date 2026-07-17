@@ -1,61 +1,55 @@
-# Explorenu — Northwest University landing
+# SwoopShop · Northwest University official storefront
 
-A Nuxt 3 + Vue 3 port of the "Request Info" landing page for
-Northwest University (Kirkland, WA). Built on the official NU
-design system tokens (colors, type, spacing, radius, shadow).
+PICKUP-ONLY e-commerce site built with Nuxt 3. Sells official NU apparel, headwear,
+and accessories — orders are picked up at the Merdian Building on campus.
 
 ## Stack
-- Nuxt 3 (SSR + static prerender via `nitro.preset: 'static'`)
-- Vue 3 `<script setup>` SFCs
-- Vanilla CSS, organized as design tokens + components
-- Zero runtime JS dependencies besides Vue/Nuxt
+- Nuxt 3 (Vue 3, Vite)
+- TypeScript
+- Plain CSS using the official Northwest University Design System tokens
+  (see `assets/css/tokens.css`)
+- Static-site generation (Nitro `static` preset)
 
-## Run
+## Routes
+- `/` — landing: hero, featured, categories, collections, pickup banner, newsletter
+- `/product/[slug]` — product detail with size + color selectors and pickup-only note
+- `/cart` — bag with pickup details
+- `/checkout` — pickup form (name, email, phone, pickup slot) + order confirmation
+
+## Design system
+Strict consumers of NU design tokens (`assets/css/tokens.css`). No raw color or
+spacing literals in component styles — only design-system CSS variables. Pages
+styles in `assets/css/shop.css`.
+
+## Scripts
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # static export to .output/public
+npm run build    # production static build into .output/public
+npm run preview  # serve the build locally
 ```
 
-## Project layout
+## File map
 ```
-app.vue                 # Nuxt root
-pages/index.vue         # Single landing page (composes all sections)
-components/
-  SiteHeader.vue
-  SiteFooter.vue
-  HeroSection.vue
-  LeadForm.vue          # The "Request Info" form (hero placement)
-  TrustBar.vue
-  WhySection.vue        # Animated stat counters
-  ProgramsSection.vue   # Tabbed program grid
-  LifeSection.vue       # Campus life editorial
-  StoriesSection.vue    # Testimonials
-  FinalCta.vue          # Mini form (footer CTA)
-composables/
-  useReveal.ts          # IntersectionObserver reveal
-  useCountUp.ts         # Animated stat counters
-  useStickyHeader.ts
-  usePrograms.ts        # Program data + tab state
-  useLeadForm.ts        # Form state, validation, submit
 assets/css/
-  tokens.css            # Design system tokens (colors, type, space, …)
-  main.css              # Component styles
-server/api/
-  lead.post.ts          # Optional POST /api/lead handler
-public/                 # Hero + campus photography (auto-copied from /assets)
+  tokens.css       NU design system tokens
+  shop.css         page + component styles
+components/
+  ShopHeader.vue
+  ShopFooter.vue
+  ProductCard.vue
+  CategorySection.vue
+  CollectionsGrid.vue
+  PickupBanner.vue
+  InstagramGrid.vue
+  NewsletterBand.vue
+composables/
+  useProducts.ts   mock catalog (12 products)
+  useCart.ts       cart state + localStorage
+  useCheckout.ts   checkout form + pickup slot data
+pages/
+  index.vue        landing
+  product/[slug].vue
+  cart.vue
+  checkout.vue
 ```
-
-## Image assets
-The 14 campus photos that ship under `public/` were curated from
-`../display-web/public/images/`. To swap in new photography, drop
-the new files into `public/` and update the `image` paths in
-`composables/usePrograms.ts` and the `<img src>` calls in
-`components/{HeroSection,LifeSection,StoriesSection}.vue`.
-
-## TODO markers
-- `nuxt.config.ts` — Typekit kit ID
-- `composables/usePrograms.ts` — Program descriptions
-- `components/StoriesSection.vue` — Real testimonials
-- `composables/useLeadForm.ts` + `server/api/lead.post.ts` —
-  Wire the form to the real CRM / ESP endpoint

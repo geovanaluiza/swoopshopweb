@@ -7,45 +7,32 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
-      title: 'Northwest University — Follow Your Faith. Find Your Future.',
+      title: 'SwoopShop · Official Northwest University Store',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
         {
           name: 'description',
           content:
-            'Request your free info packet from Northwest University. Christian community in Kirkland, WA. 100% of programs include real internships. 94% of grads employed or in grad school within 6 months.'
+            'Official Northwest University apparel, headwear, and accessories. Pickup only on campus at the Merdian Building.'
         },
         { name: 'theme-color', content: '#0068bb' },
-        { property: 'og:title', content: 'Northwest University — Follow Your Faith. Find Your Future.' },
+        { property: 'og:title', content: 'SwoopShop · Official Northwest University Store' },
         {
           property: 'og:description',
-          content: 'A modern Christian university on 56 acres in Kirkland, WA. Real-world internships in every program.'
+          content: 'Eagles gear up. The whole flock does. Pickup only on campus.'
         },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:image', content: '/snow-lake.jpg' }
+        { property: 'og:type', content: 'website' }
       ],
       link: [
-        { rel: 'preconnect', href: 'https://use.typekit.net', crossorigin: '' },
-        // TODO: swap for the official NU Typekit kit from the brand portal
-        { rel: 'stylesheet', href: 'https://use.typekit.net/rxn3jgc.css' },
-        { rel: 'preconnect', href: 'https://w.behold.so' },
-        { rel: 'preconnect', href: 'https://images.behold.so' }
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
       ]
     }
   },
 
-  css: ['~/assets/css/tokens.css', '~/assets/css/main.css'],
+  css: ['~/assets/css/tokens.css', '~/assets/css/shop.css'],
 
-  runtimeConfig: {
-    public: {
-      // TODO (Marketing): set FORMSPREE_URL=https://formspree.io/f/YOUR_FORM_ID in .env
-      // This is the endpoint for all lead form submissions (hero form, mini CTAs, scholarship gate)
-      FORMSPREE_URL: '',
-    }
-  },
-
-  // Static-site generation so the page can be deployed as a plain landing page.
+  // Static-site generation so the storefront can be deployed as a plain static site.
   nitro: {
     preset: 'static'
   }

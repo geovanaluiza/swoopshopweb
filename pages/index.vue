@@ -1,41 +1,127 @@
 <script setup lang="ts">
-import { useReveal } from '~/composables/useReveal'
+const { featured, list } = useProducts()
 
-const { observe: observeReveal } = useReveal()
-
-onMounted(() => {
-  nextTick(() => {
-    observeReveal()
-  })
+useHead({
+  title: 'SwoopShop · Official Northwest University Store',
+  meta: [
+    {
+      name: 'description',
+      content: 'Official Northwest University apparel, headwear, and accessories. Pickup only on campus at the Merdian Building.'
+    }
+  ]
 })
-
-const onRecommendation = (program: string) => {
-  const form = document.getElementById('leadForm') as HTMLFormElement | null
-  if (!form) return
-  const programEl = form.querySelector<HTMLSelectElement>('#program')
-  if (programEl) programEl.value = program
-}
 </script>
 
 <template>
   <div>
-    <SiteHeader />
-    <main>
-      <HeroSection />
-      <TrustBar />
-      <MiniCta ctaLabel="Want a quick overview? Get the free info packet." />
-      <WhySection />
-      <BigPhotoSection />
-      <ScholarshipExplorer />
-      <QuizFindYourFit @recommendation="onRecommendation" />
-      <LifeSection />
-      <InstagramSection />
-      <StoriesSection />
-      <MiniCta ctaLabel="Have questions? We'll reply within 1 business day." />
-      <FinalCta />
-    </main>
-    <SiteFooter />
-    <StickyMobileCta />
-    <ExitIntentPopup />
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="hero-eyebrow">
+            <span class="topbar-dot" style="background: var(--nu-blue);" />
+            Fall drop · 2026
+          </span>
+          <h1 class="hero-title">
+            Eagles gear up.<br />
+            <span class="hero-italic">The whole flock does.</span>
+          </h1>
+          <p class="hero-lede">
+            Official NU apparel, headwear, and accessories — pickup only, right here at the
+            Merdian Building. New drops every month.
+          </p>
+          <div class="hero-actions">
+            <a href="#shop" class="btn btn-primary">Shop the new drop</a>
+            <a href="#pickup" class="btn btn-ghost">Pickup hours →</a>
+          </div>
+          <div class="hero-pickup">
+            <span class="hero-pickup-dot" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s7-7.6 7-13a7 7 0 0 0-14 0c0 5.4 7 13 7 13Z" stroke-linejoin="round" />
+                <circle cx="12" cy="9" r="2.5" />
+              </svg>
+            </span>
+            <div>
+              <strong>Pickup only</strong>
+              <span>Merdian Building · Mon–Fri 9–5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-tile hero-tile-lg">
+            <img src="https://placehold.co/640x800/04505c/ffffff?text=Pilchuck+Hoodie&font=roboto" alt="" />
+            <span class="hero-tile-tag">Best Seller</span>
+          </div>
+          <div class="hero-tile">
+            <img src="https://placehold.co/400x400/0068bb/ffffff?text=Swoop+Cap&font=roboto" alt="" />
+            <span class="hero-tile-tag">New</span>
+          </div>
+          <div class="hero-tile">
+            <img src="https://placehold.co/400x400/fbd945/001729?text=Tumbler&font=roboto" alt="" />
+            <span class="hero-tile-tag">Pickup</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust">
+      <div class="container trust-grid">
+        <div class="trust-item"><strong>Pickup only</strong><span>On campus · Merdian Building</span></div>
+        <div class="trust-item"><strong>Ready in 1h</strong><span>During pickup windows</span></div>
+        <div class="trust-item"><strong>Officially licensed</strong><span>All Northwest University</span></div>
+        <div class="trust-item"><strong>30-day returns</strong><span>Bring it back, no questions</span></div>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section id="shop" class="section">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow">Just landed</p>
+            <h2 class="section-title">This week's restocks</h2>
+          </div>
+          <p class="section-sub">Pieces back on the shelf after selling out the first time. Pickup while they last.</p>
+        </header>
+
+        <div class="product-grid">
+          <ProductCard v-for="p in featured()" :key="p.id" :product="p" />
+        </div>
+      </div>
+    </section>
+
+    <CollectionsGrid />
+
+    <!-- APPAREL -->
+    <CategorySection
+      id="apparel"
+      category="apparel"
+      title="Apparel"
+      subtitle="Crewnecks, hoodies, tees, jerseys — every piece is tested on campus before it gets here."
+    />
+
+    <!-- HEADWEAR -->
+    <CategorySection
+      id="headwear"
+      category="headwear"
+      title="Headwear"
+      subtitle="Caps and beanies embroidered with the official NU crest."
+    />
+
+    <!-- ACCESSORIES -->
+    <CategorySection
+      id="accessories"
+      category="accessories"
+      title="Accessories"
+      subtitle="Tumblers, mugs, totes — the things that turn a dorm into home."
+    />
+
+    <PickupBanner />
+
+    <NewsletterBand />
+
+    <InstagramGrid />
   </div>
 </template>
