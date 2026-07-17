@@ -21,11 +21,13 @@ onMounted(() => {
       <BigPhotoSection />
       <ScholarshipExplorer />
       <LifeSection />
+      <InstagramSection />
       <StoriesSection />
       <MiniCta ctaLabel="Have questions? We'll reply within 1 business day." />
       <FinalCta />
     </main>
     <SiteFooter />
     <StickyMobileCta />
+    <ExitIntentPopup />
   </div>
 </template>

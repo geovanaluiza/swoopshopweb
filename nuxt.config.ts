@@ -28,7 +28,9 @@ export default defineNuxtConfig({
       link: [
         { rel: 'preconnect', href: 'https://use.typekit.net', crossorigin: '' },
         // TODO: swap for the official NU Typekit kit from the brand portal
-        { rel: 'stylesheet', href: 'https://use.typekit.net/rxn3jgc.css' }
+        { rel: 'stylesheet', href: 'https://use.typekit.net/rxn3jgc.css' },
+        { rel: 'preconnect', href: 'https://w.behold.so' },
+        { rel: 'preconnect', href: 'https://images.behold.so' }
       ]
     }
   },
