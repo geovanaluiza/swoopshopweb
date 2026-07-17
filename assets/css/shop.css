@@ -43,7 +43,118 @@ legend { padding: 0; }
   border-radius: var(--border-radius-5);
 }
 
-/* ----- Layout helpers ----- */
+/* ---- SwoopShop color overrides: more NU Blue + Yellow ---- */
+
+/* TOPBAR — brand blue */
+.topbar { background: var(--nu-blue); }
+.topbar-inner { justify-content: center; }
+
+/* HEADER — brand mark stays blue, text shifts to brand blue */
+.brand-mark { background: var(--nu-blue); }
+.brand-name { color: var(--nu-blue); }
+
+/* GHOST BUTTON — blue on hover */
+.btn-ghost { border-color: var(--nu-navy); color: var(--nu-navy); }
+.btn-ghost:hover { background: var(--nu-navy); color: #fff; }
+
+/* PRODUCT CARD — more blue + yellow accents */
+.product-card:hover { border-color: rgba(0, 104, 187, .3); box-shadow: 0 18px 40px rgba(0, 104, 187, .16); }
+.quick-add { background: var(--nu-tour); color: var(--nu-navy); font-weight: 800; opacity: 1; transform: none; }
+.quick-add:hover { background: var(--nu-amber); }
+.product-title { color: var(--nu-navy); }
+.product-price { color: var(--nu-navy); }
+
+/* BADGES — yellow dominant */
+.badge-new { background: var(--nu-tour); color: var(--nu-navy); }
+.badge-best { background: var(--nu-blue); color: #fff; }
+.badge-sale { background: var(--nu-navy); color: #fff; }
+.badge-limited { background: var(--nu-tour); color: var(--nu-navy); }
+
+/* COLLECTION overlay — more blue */
+.collection-overlay h3 { color: #fff; }
+
+/* FOOTER — midnight base, blue top accent line */
+.site-footer { border-top: 4px solid var(--nu-blue); }
+
+/* TRUST — powder background with blue tones */
+.trust { background: var(--nu-powder); border-color: rgba(0, 104, 187, .12); }
+.trust-item strong { color: var(--nu-navy); }
+
+/* MUTED TEXT — readable blue-grey */
+.muted { color: #2a5f8a; }
+
+/* NAV links */
+.site-nav a { color: var(--nu-navy); }
+.site-nav a:hover { color: var(--nu-blue); }
+.site-nav a::after { background: var(--nu-blue); }
+
+/* ICON BTNS — blue on hover */
+.icon-btn:hover, .cart-btn:hover { background: var(--nu-powder); color: var(--nu-blue); border-color: var(--nu-blue); }
+
+/* CART summary titles + prices */
+.cart-summary h2 { color: var(--nu-navy); }
+.cart-line h3 { color: var(--nu-navy); }
+.cart-line-total { color: var(--nu-navy); }
+.summary-row.total { color: var(--nu-navy); }
+.summary-row.total strong { color: var(--nu-navy); }
+
+/* CHECKOUT titles */
+.checkout-card h2 { color: var(--nu-navy); }
+.checkout-card h2 .step { background: var(--nu-blue); }
+
+/* FORM field label */
+.field label { color: var(--nu-navy); }
+
+/* SLOT active state */
+.slot.is-active { border-color: var(--nu-blue); background: var(--nu-powder); color: var(--nu-blue); }
+.slot.is-active small { color: var(--nu-navy); }
+
+/* PICKUP CARD — blue accents */
+.pickup-card-head { color: var(--nu-tour); }
+
+/* ORDER LIST */
+.order-list h4 { color: var(--nu-navy); }
+
+/* CHIP active */
+.chip.is-active { border-color: var(--nu-blue); background: var(--nu-blue); color: #fff; }
+
+/* COLOR CHIP active */
+.color-chip.is-active { box-shadow: 0 0 0 2.5px var(--nu-blue); }
+
+/* QTY BTN */
+.btn-qty button { color: var(--nu-navy); }
+
+/* PRODUCT detail page */
+.detail h1 { color: var(--nu-navy); }
+.detail .price-line { color: var(--nu-navy); }
+.option-block label { color: var(--nu-navy); }
+
+/* SLIDE-IN LINK ARROW */
+.link-arrow { color: var(--nu-blue); border-bottom-color: var(--nu-blue); }
+
+/* SECTION eyebrow */
+.eyebrow { color: var(--nu-navy); }
+
+/* SECTION title */
+.section-title { color: var(--nu-navy); }
+
+/* NEWSLETTER — blue background */
+.newsletter { background: var(--nu-blue); }
+.newsletter h2 { color: #fff; }
+.newsletter .eyebrow { color: var(--nu-tour); }
+
+/* NEWSLETTER form */
+.newsletter input { color: #fff; }
+.newsletter input::placeholder { color: rgba(255,255,255,.6); }
+
+/* HERO eyebrow bg */
+.hero-eyebrow { background: rgba(0, 104, 187, .12); color: var(--nu-blue); }
+
+/* PRODUCT media bg stays powder — that's fine */
+
+/* =============================================================
+   Layout helpers
+   ============================================================= */
 .container {
   width: 100%;
   max-width: var(--container);
@@ -118,7 +229,7 @@ legend { padding: 0; }
 }
 .btn-secondary {
   background: var(--nu-tour);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   box-shadow: 0 8px 20px rgba(251, 217, 69, .35);
 }
 .btn-secondary:hover {
@@ -127,7 +238,7 @@ legend { padding: 0; }
 }
 .btn-ghost {
   background: transparent;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   border: 1.5px solid var(--nu-midnight);
 }
 .btn-ghost:hover { background: var(--nu-midnight); color: #fff; }
@@ -204,7 +315,7 @@ legend { padding: 0; }
   font-family: var(--font-family-serif);
   font-weight: 700;
   font-size: 20px;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
 }
 .brand-sub {
   font-family: var(--font-family-sans-serif);
@@ -224,7 +335,7 @@ legend { padding: 0; }
   position: relative;
   font-size: var(--font-size-2);
   font-weight: 700;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   padding: 8px 0;
   transition: color var(--transition-5) ease;
 }
@@ -277,7 +388,7 @@ legend { padding: 0; }
   border-radius: var(--border-radius-5);
   background: #fff;
   border: 1px solid var(--line-soft);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   text-decoration: none;
   position: relative;
   transition: background var(--transition-5) ease, color var(--transition-5) ease, border-color var(--transition-5) ease, transform var(--transition-5) ease;
@@ -291,7 +402,7 @@ legend { padding: 0; }
   padding: 0 6px;
   border-radius: 999px;
   background: var(--nu-tour);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   font-size: 11px;
   font-weight: 800;
   display: grid; place-items: center;
@@ -374,7 +485,7 @@ legend { padding: 0; }
   border-radius: var(--border-radius-6);
   background: #fff;
   box-shadow: var(--box-shadow-5);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   font-size: var(--font-size-2);
   font-weight: 600;
 }
@@ -415,7 +526,7 @@ legend { padding: 0; }
   top: 14px; left: 14px;
   padding: 6px 10px;
   background: rgba(255,255,255,.95);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   border-radius: var(--border-radius-5);
   font-size: 11px;
   letter-spacing: var(--letter-spacing-8);
@@ -448,7 +559,7 @@ legend { padding: 0; }
 .trust-item strong {
   font-family: var(--font-family-sans-serif);
   font-weight: 800;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   font-size: var(--font-size-3);
 }
 .trust-item span {
@@ -517,7 +628,7 @@ legend { padding: 0; }
   padding: 12px 14px;
   border-radius: var(--border-radius-5);
   background: var(--nu-tour);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   font-weight: 800;
   font-size: var(--font-size-1);
   letter-spacing: var(--letter-spacing-4);
@@ -547,7 +658,7 @@ legend { padding: 0; }
   font-weight: 700;
   font-size: var(--font-size-4);
   letter-spacing: var(--letter-spacing-4);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   line-height: 1.2;
   margin: 0;
 }
@@ -558,7 +669,7 @@ legend { padding: 0; }
   font-family: var(--font-family-serif);
   font-weight: 700;
   font-size: var(--font-size-4);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   margin-top: 4px;
 }
 .price-compare {
@@ -718,7 +829,7 @@ legend { padding: 0; }
   font-family: var(--font-family-serif);
   font-weight: 700;
   font-size: var(--headline-2);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   letter-spacing: var(--letter-spacing-3);
 }
 .newsletter form {
@@ -736,7 +847,7 @@ legend { padding: 0; }
   padding: 16px 16px;
   font-size: var(--font-size-3);
   outline: none;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
 }
 
 /* =============================================================
@@ -824,7 +935,7 @@ legend { padding: 0; }
   font-weight: 700;
   font-size: var(--headline-2);
   letter-spacing: var(--letter-spacing-3);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   margin: 0 0 var(--size-4);
 }
 .cart-layout {
@@ -856,7 +967,7 @@ legend { padding: 0; }
   font-family: var(--font-family-serif);
   font-size: var(--font-size-4);
   font-weight: 700;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   margin: 0 0 4px;
 }
 .cart-line .meta {
@@ -888,7 +999,7 @@ legend { padding: 0; }
   width: 22px; height: 22px;
   font-weight: 800;
   font-size: 16px;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
 }
 .qty-control span {
   min-width: 24px;
@@ -899,7 +1010,7 @@ legend { padding: 0; }
   font-family: var(--font-family-serif);
   font-weight: 700;
   font-size: var(--font-size-5);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
 }
 
 .cart-summary {
@@ -914,7 +1025,7 @@ legend { padding: 0; }
 .cart-summary h2 {
   font-family: var(--font-family-serif);
   font-size: var(--headline-1);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   margin: 0 0 var(--size-4);
 }
 .summary-row {
@@ -939,7 +1050,7 @@ legend { padding: 0; }
   background: var(--nu-powder);
   border-radius: var(--border-radius-5);
   font-size: var(--font-size-2);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   line-height: var(--line-height-4);
 }
 .pickup-info strong {
@@ -961,7 +1072,7 @@ legend { padding: 0; }
 .empty-cart h2 {
   font-family: var(--font-family-serif);
   font-size: var(--headline-1);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   margin-bottom: var(--size-4);
 }
 .empty-cart p { color: var(--muted-fg); margin-bottom: var(--size-5); }
@@ -974,7 +1085,7 @@ legend { padding: 0; }
   font-family: var(--font-family-serif);
   font-weight: 700;
   font-size: var(--headline-2);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   letter-spacing: var(--letter-spacing-3);
   margin: 0 0 var(--size-3);
 }
@@ -996,7 +1107,7 @@ legend { padding: 0; }
 .checkout-card h2 {
   font-family: var(--font-family-serif);
   font-size: var(--font-size-5);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   margin: 0 0 var(--size-5);
   display: flex;
   align-items: center;
@@ -1024,7 +1135,7 @@ legend { padding: 0; }
   font-size: var(--font-size-1);
   font-weight: 800;
   letter-spacing: var(--letter-spacing-4);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   text-transform: uppercase;
 }
 .field input, .field select, .field textarea {
@@ -1054,7 +1165,7 @@ legend { padding: 0; }
   text-align: center;
   font-weight: 700;
   font-size: var(--font-size-2);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   cursor: pointer;
   transition: border-color var(--transition-5) ease, background var(--transition-5) ease;
 }
@@ -1098,14 +1209,14 @@ legend { padding: 0; }
   font-weight: 700;
   font-size: var(--font-size-2);
   margin: 0;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
 }
 .order-list .meta { font-size: var(--font-size-1); color: var(--muted-fg); margin-top: 2px; }
 .order-list .line {
   font-family: var(--font-family-serif);
   font-size: var(--font-size-4);
   font-weight: 700;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   text-align: right;
 }
 
@@ -1129,7 +1240,7 @@ legend { padding: 0; }
   font-family: var(--font-family-serif);
   font-size: var(--headline-2);
   margin: 0 0 var(--size-4);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   letter-spacing: var(--letter-spacing-3);
 }
 .confirmation p { color: var(--muted-fg); margin-bottom: var(--size-5); }
@@ -1181,7 +1292,7 @@ legend { padding: 0; }
   font-weight: 700;
   font-size: var(--headline-2);
   letter-spacing: var(--letter-spacing-3);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   margin: 0 0 var(--size-4);
   line-height: 1.05;
 }
@@ -1192,7 +1303,7 @@ legend { padding: 0; }
   font-family: var(--font-family-serif);
   font-weight: 700;
   font-size: var(--font-size-6);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   margin-bottom: var(--size-5);
 }
 .detail .price-line .compare {
@@ -1214,7 +1325,7 @@ legend { padding: 0; }
   letter-spacing: var(--letter-spacing-8);
   text-transform: uppercase;
   font-weight: 800;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   margin-bottom: var(--size-3);
 }
 
@@ -1229,7 +1340,7 @@ legend { padding: 0; }
   border-radius: var(--border-radius-5);
   border: 1.5px solid var(--line-soft);
   background: #fff;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   font-weight: 700;
   font-size: var(--font-size-2);
   cursor: pointer;
@@ -1276,7 +1387,7 @@ legend { padding: 0; }
 .btn-qty button {
   font-size: 20px;
   font-weight: 800;
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   padding: 14px 8px;
 }
 
@@ -1286,7 +1397,7 @@ legend { padding: 0; }
   padding: var(--size-4);
   border-radius: var(--border-radius-6);
   background: var(--nu-powder);
-  color: var(--nu-midnight);
+  color: var(--nu-navy);
   margin-top: var(--space-5);
   font-size: var(--font-size-2);
   line-height: var(--line-height-4);
