@@ -65,14 +65,14 @@
   /* Radius */
   --border-radius-3: 4px;
   --border-radius-4: 6px;
-  --border-radius-5: 8px;   /* default per spec */
+  --border-radius-5: 8px;
   --border-radius-6: 12px;
   --border-radius-7: 16px;
   --border-radius-8: 20px;
   --border-radius-9: 24px;
   --border-radius-10: 9999px;
 
-  /* Shadow — defaults per design system */
+  /* Shadow */
   --box-shadow-5: 0 1px 3px rgba(0, 38, 61, .08), 0 8px 24px rgba(0, 38, 61, .10);
   --box-shadow-6: 0 4px 8px rgba(0, 38, 61, .10), 0 12px 28px rgba(0, 38, 61, .12);
   --box-shadow-7: 0 10px 30px rgba(0, 38, 61, .14);
@@ -92,24 +92,18 @@
   --z-index-7: 70;
   --z-index-9: 90;
 
-  /* Breakpoints (consumed via @media only — listed here for reference)
-     --breakpoint-3: 640px   mobile → tablet
-     --breakpoint-6: 1120px  tablet → desktop
-     --breakpoint-8: 1440px  desktop wide
-  */
-
   /* Layout */
   --container: 1120px;
   --gutter: 24px;
 
-  /* Page background — neutral, not flat white */
-  --page-bg: var(--nu-wisp);
+  /* Page — light blue base for NU brand feel */
+  --page-bg: var(--nu-powder);
   --page-fg: var(--nu-midnight);
-  --muted-fg: #5a7a8e;
-  --line-faint: rgba(0, 38, 61, .08);
-  --line-soft:   rgba(0, 38, 61, .14);
+  --muted-fg: #2a5f8a;
+  --line-faint: rgba(0, 104, 187, .08);
+  --line-soft:   rgba(0, 104, 187, .18);
 
-  /* Sale (intentional — only used for strikethrough price) */
+  /* Accents */
   --price-color: var(--nu-midnight);
-  --sale-color: var(--nu-evergreen);
+  --sale-color: var(--nu-navy);
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { featured, list } = useProducts()
+const { featured } = useProducts()
 
 useHead({
   title: 'SwoopShop · Official Northwest University Store',
@@ -27,7 +27,7 @@ useHead({
             <span class="hero-italic">The whole flock does.</span>
           </h1>
           <p class="hero-lede">
-            Official NU apparel, headwear, and accessories — pickup only, right here at the
+            Official NU apparel and headwear — pickup only, right here at the
             Merdian Building. New drops every month.
           </p>
           <div class="hero-actions">
@@ -50,16 +50,16 @@ useHead({
 
         <div class="hero-visual" aria-hidden="true">
           <div class="hero-tile hero-tile-lg">
-            <img src="https://placehold.co/640x800/04505c/ffffff?text=Pilchuck+Hoodie&font=roboto" alt="" />
+            <img src="/shop/Hanes-Hoodie-NU-Royal.jpg" alt="" />
             <span class="hero-tile-tag">Best Seller</span>
           </div>
           <div class="hero-tile">
-            <img src="https://placehold.co/400x400/0068bb/ffffff?text=Swoop+Cap&font=roboto" alt="" />
+            <img src="/shop/Knit-Beanie-Navy.jpg" alt="" />
             <span class="hero-tile-tag">New</span>
           </div>
           <div class="hero-tile">
-            <img src="https://placehold.co/400x400/fbd945/001729?text=Tumbler&font=roboto" alt="" />
-            <span class="hero-tile-tag">Pickup</span>
+            <img src="/shop/Legacy-Twill-Eagles-Stone-Navy.jpg" alt="" />
+            <span class="hero-tile-tag">Alumni</span>
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@ useHead({
       id="apparel"
       category="apparel"
       title="Apparel"
-      subtitle="Crewnecks, hoodies, tees, jerseys — every piece is tested on campus before it gets here."
+      subtitle="Crewnecks, hoodies, tees — every piece is tested on campus before it gets here."
     />
 
     <!-- HEADWEAR -->
@@ -108,14 +108,6 @@ useHead({
       category="headwear"
       title="Headwear"
       subtitle="Caps and beanies embroidered with the official NU crest."
-    />
-
-    <!-- ACCESSORIES -->
-    <CategorySection
-      id="accessories"
-      category="accessories"
-      title="Accessories"
-      subtitle="Tumblers, mugs, totes — the things that turn a dorm into home."
     />
 
     <PickupBanner />

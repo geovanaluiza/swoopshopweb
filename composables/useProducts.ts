@@ -34,16 +34,17 @@ export const CATEGORY_LABEL: Record<ProductCategory, string> = {
 const SIZE_CLOTHING = ['XS', 'S', 'M', 'L', 'XL', '2XL']
 const SIZE_HAT = ['OSFM']
 
-const NU_BLUE = { id: 'blue', name: 'NU Blue', hex: '#0068bb' }
-const NAVY = { id: 'navy', name: 'Navy', hex: '#034C87' }
-const MIDNIGHT = { id: 'midnight', name: 'Midnight', hex: '#001729' }
-const EVERGREEN = { id: 'evergreen', name: 'Evergreen', hex: '#04505c' }
-const WHITE = { id: 'white', name: 'White', hex: '#ffffff' }
-const GREY = { id: 'grey', name: 'Cloud', hex: '#f1f2f2' }
-const TOUR = { id: 'tour', name: 'Tour', hex: '#fbd945' }
+const NU_BLUE    = { id: 'blue',     name: 'NU Blue',   hex: '#0068bb' }
+const NAVY       = { id: 'navy',     name: 'Navy',      hex: '#034C87' }
+const MIDNIGHT   = { id: 'midnight', name: 'Midnight',  hex: '#001729' }
+const EVERGREEN  = { id: 'evergreen',name: 'Evergreen', hex: '#04505c' }
+const WHITE      = { id: 'white',    name: 'White',     hex: '#ffffff' }
+const GREY       = { id: 'grey',     name: 'Cloud',     hex: '#f1f2f2' }
+const TOUR       = { id: 'tour',     name: 'Tour',      hex: '#fbd945' }
+const CAMO       = { id: 'camo',     name: 'Camo',      hex: '#6b5d4a' }
+const STONE      = { id: 'stone',    name: 'Stone',     hex: '#8a8070' }
 
-const PLACEHOLDER = (label: string, hex = '0068bb') =>
-  `https://placehold.co/640x800/${hex.replace('#', '')}/ffffff?text=${encodeURIComponent(label)}&font=roboto`
+const IMG = (f: string) => `/shop/${f}`
 
 export const PRODUCTS: Product[] = [
   {
@@ -56,10 +57,10 @@ export const PRODUCTS: Product[] = [
     badge: 'Best Seller',
     description:
       'Heavyweight 80/20 cotton-poly fleece pullover hoodie. Brushed inner, kangaroo pocket, tonal mountain graphic across the chest.',
-    image: PLACEHOLDER('Pilchuck+Hoodie', '04505c'),
-    imageAlt: 'Evergreen NU hoodie with mountain graphic',
+    image: IMG('Hanes-Hoodie-NU-Royal.jpg'),
+    imageAlt: 'Royal blue hoodie with NU embroidery',
     sizes: SIZE_CLOTHING,
-    colors: [EVERGREEN, MIDNIGHT, NAVY]
+    colors: [NU_BLUE, NAVY, MIDNIGHT]
   },
   {
     id: 'p-002',
@@ -68,156 +69,184 @@ export const PRODUCTS: Product[] = [
     price: 58,
     category: 'apparel',
     collection: 'Eagles Essentials',
+    badge: 'Best Seller',
     description:
-      'Mid-weight fleece crewneck in NU Midnight with an embroidered Swoop crest on the chest and rib-knit cuffs.',
-    image: PLACEHOLDER('Eagles+Crewneck', '00263d'),
-    imageAlt: 'Navy crewneck with Swoop embroidery',
+      'Mid-weight fleece crewneck with an embroidered Swoop crest on the chest and rib-knit cuffs.',
+    image: IMG('Cotton-Collective-Heavy-Crew-Bering-Sea.jpg'),
+    imageAlt: 'Heavyweight crewneck fleece in Bering Sea',
     sizes: SIZE_CLOTHING,
-    colors: [MIDNIGHT, EVERGREEN, NU_BLUE]
+    colors: [EVERGREEN, NAVY, GREY]
   },
   {
     id: 'p-003',
-    slug: 'swoop-campus-tee',
-    name: 'Swoop Campus Tee',
+    slug: 'camo-crewneck',
+    name: 'Camo Heavy Crewneck',
+    price: 65,
+    category: 'apparel',
+    collection: 'Eagles Essentials',
+    badge: 'New',
+    description:
+      'Military-inspired heavyweight camo crewneck with embroidered Swoop at the chest.',
+    image: IMG('Cotton-Collective-Crew-Camo.jpg'),
+    imageAlt: 'Camo heavyweight crewneck',
+    sizes: SIZE_CLOTHING,
+    colors: [CAMO]
+  },
+  {
+    id: 'p-004',
+    slug: 'made-crew-nu-eagle',
+    name: 'Made Crew — NU Eagle',
+    price: 62,
+    category: 'apparel',
+    collection: 'Pilchuck Premium',
+    description:
+      'Premium midweight crewneck with a large embroidered Eagle mark across the chest.',
+    image: IMG('Made-Crew-NU-Eagle-Grey.jpg'),
+    imageAlt: 'Grey crewneck with large embroidered NU Eagle',
+    sizes: SIZE_CLOTHING,
+    colors: [GREY, NAVY]
+  },
+  {
+    id: 'p-005',
+    slug: 'hanes-ls-navy',
+    name: 'Hanes Long Sleeve Tee — Navy',
+    price: 32,
+    category: 'apparel',
+    collection: 'Eagles Essentials',
+    description:
+      'Soft ring-spun cotton long sleeve tee with a small embroidered NU crest at the chest.',
+    image: IMG('Hanes-LS-Tee-Navy.jpg'),
+    imageAlt: 'Navy long sleeve tee with NU crest',
+    sizes: SIZE_CLOTHING,
+    colors: [NAVY, MIDNIGHT]
+  },
+  {
+    id: 'p-006',
+    slug: 'hanes-ss-nu-seal',
+    name: 'Hanes SS Tee — NU Seal',
     price: 28,
     category: 'apparel',
     collection: 'Swoop Campus',
     badge: 'New',
     description:
-      'Soft ring-spun cotton tee with a vintage Swoop wordmark screen-printed across the chest.',
-    image: PLACEHOLDER('Swoop+Campus+Tee', '0068bb'),
-    imageAlt: 'NU blue tee with vintage Swoop wordmark',
+      'Soft cotton short sleeve tee with a printed NU seal at the chest. An everyday staple.',
+    image: IMG('Hanes-SS-NU-Seal-Tee-Navy.jpg'),
+    imageAlt: 'Navy short sleeve tee with NU seal print',
     sizes: SIZE_CLOTHING,
-    colors: [WHITE, NAVY, MIDNIGHT, NU_BLUE]
-  },
-  {
-    id: 'p-004',
-    slug: 'game-day-jersey',
-    name: 'Game Day Replica Jersey',
-    price: 65,
-    compareAt: 75,
-    category: 'apparel',
-    collection: 'Game Day',
-    badge: 'Sale',
-    description:
-      'Officially licensed replica jersey with tackle-twill numbers, embroidered NU crest, and breathable mesh side panels.',
-    image: PLACEHOLDER('Game+Day+Jersey', '034C87'),
-    imageAlt: 'Navy replica jersey with tackle-twill numbers',
-    sizes: SIZE_CLOTHING,
-    colors: [NAVY, MIDNIGHT]
-  },
-  {
-    id: 'p-005',
-    slug: 'pilchuck-quarter-zip',
-    name: 'Pilchuck Quarter-Zip',
-    price: 64,
-    category: 'apparel',
-    collection: 'Pilchuck Premium',
-    description:
-      'Performance quarter-zip pullover with a moisture-wicking inner and metallic NU crest at the collar.',
-    image: PLACEHOLDER('Pilchuck+Quarter+Zip', '04505c'),
-    imageAlt: 'Evergreen quarter-zip pullover',
-    sizes: SIZE_CLOTHING,
-    colors: [EVERGREEN, MIDNIGHT, NU_BLUE, TOUR]
-  },
-  {
-    id: 'p-006',
-    slug: 'tour-long-sleeve',
-    name: 'Tour Long Sleeve Tee',
-    price: 38,
-    category: 'apparel',
-    collection: 'Eagles Essentials',
-    description:
-      'Lightweight long sleeve in Tour yellow with a tonal Swoop embroidered on the chest.',
-    image: PLACEHOLDER('Tour+Long+Sleeve', 'fbd945'),
-    imageAlt: 'Tour yellow long sleeve tee',
-    sizes: SIZE_CLOTHING,
-    colors: [TOUR, WHITE, NU_BLUE]
+    colors: [NAVY, WHITE, NU_BLUE]
   },
   {
     id: 'p-007',
-    slug: 'alumni-classic-cap',
-    name: 'Alumni Classic Cap',
-    price: 32,
-    category: 'headwear',
-    collection: 'Alumni',
+    slug: 'augusta-perf-tee-navy',
+    name: 'Augusta Performance SS Tee — Navy',
+    price: 30,
+    category: 'apparel',
+    collection: 'Game Day',
     description:
-      'Unstructured six-panel dad cap with an embroidered NU crest and a curved brim. Adjustable metal buckle.',
-    image: PLACEHOLDER('Alumni+Cap', '00263d'),
-    imageAlt: 'Navy unstructured cap with embroidered NU crest',
-    sizes: SIZE_HAT,
-    colors: [MIDNIGHT, EVERGREEN, GREY]
+      'Lightweight moisture-wicking performance tee in navy with a printed Swoop mark. Built for the bleachers.',
+    image: IMG('Augusta-Perf-SS-Tee-Navy.jpg'),
+    imageAlt: 'Navy performance short sleeve tee',
+    sizes: SIZE_CLOTHING,
+    colors: [NAVY, NU_BLUE]
   },
   {
     id: 'p-008',
-    slug: 'swoop-knit-beanie',
-    name: 'Swoop Knit Beanie',
-    price: 26,
+    slug: 'legacy-twill-cap',
+    name: 'Legacy Twill Eagles Cap',
+    price: 30,
     category: 'headwear',
-    collection: 'Swoop Campus',
+    collection: 'Alumni',
+    badge: 'Best Seller',
     description:
-      'Cuffed knit beanie in NU blue with a woven Swoop patch and a contrast stripe.',
-    image: PLACEHOLDER('Swoop+Beanie', '0068bb'),
-    imageAlt: 'Blue knit beanie',
+      'Premium unstructured cap in stone/navy with embroidered Eagles wordmark. Adjustable strap.',
+    image: IMG('Legacy-Twill-Eagles-Stone-Navy.jpg'),
+    imageAlt: 'Stone and navy legacy twill Eagles cap',
     sizes: SIZE_HAT,
-    colors: [NU_BLUE, MIDNIGHT, EVERGREEN]
+    colors: [STONE, NAVY]
   },
   {
     id: 'p-009',
-    slug: 'game-day-trucker',
-    name: 'Game Day Trucker',
+    slug: 'knit-beanie-navy',
+    name: 'Knit Beanie — Navy',
+    price: 26,
+    category: 'headwear',
+    collection: 'Eagles Essentials',
+    description:
+      'Cuffed knit beanie in navy with a woven Swoop patch and contrast stripe.',
+    image: IMG('Knit-Beanie-Navy.jpg'),
+    imageAlt: 'Navy knit beanie',
+    sizes: SIZE_HAT,
+    colors: [NAVY, NU_BLUE]
+  },
+  {
+    id: 'p-010',
+    slug: 'new-era-pom-navy',
+    name: 'New Era Pom Beanie — Navy',
+    price: 32,
+    category: 'headwear',
+    collection: 'Game Day',
+    description:
+      'Authentic New Era pom-top beanie in navy with embroidered NU crest at the cuff.',
+    image: IMG('New-Era-Pom-Beanie-Navy.jpg'),
+    imageAlt: 'Navy New Era pom beanie',
+    sizes: SIZE_HAT,
+    colors: [NAVY, NU_BLUE, GREY]
+  },
+  {
+    id: 'p-011',
+    slug: 'new-era-pom-ivory',
+    name: 'New Era Pom Beanie — Ivory',
+    price: 32,
+    category: 'headwear',
+    collection: 'Pilchuck Premium',
+    description:
+      'Authentic New Era pom-top beanie in ivory with embroidered NU crest at the cuff.',
+    image: IMG('New-Era-Pom-Beanie-Ivory.jpg'),
+    imageAlt: 'Ivory New Era pom beanie',
+    sizes: SIZE_HAT,
+    colors: [WHITE, GREY]
+  },
+  {
+    id: 'p-012',
+    slug: 'sportsman-nu-hat-ivory',
+    name: 'Sportsman NU Hat — Ivory',
+    price: 34,
+    category: 'headwear',
+    collection: 'Swoop Campus',
+    description:
+      'Premium unstructured sportsman hat in ivory with a tonal embroidered Swoop at the front.',
+    image: IMG('Sportsman-NU-Ivory-Hat.jpg'),
+    imageAlt: 'Ivory unstructured sportsman hat',
+    sizes: SIZE_HAT,
+    colors: [WHITE, GREY, NAVY]
+  },
+  {
+    id: 'p-013',
+    slug: 'sportsman-nu-hat-navy',
+    name: 'Sportsman NU Hat — Navy',
     price: 34,
     category: 'headwear',
     collection: 'Game Day',
     description:
-      'Snap-back trucker with a flat brim, breathable mesh back, and raised Swoop embroidery at the front panel.',
-    image: PLACEHOLDER('Game+Day+Trucker', '034C87'),
-    imageAlt: 'Navy trucker cap with mesh back',
+      'Premium unstructured sportsman hat in navy with a tonal embroidered Swoop at the front.',
+    image: IMG('Sportsman-NU-Navy-Hat.jpg'),
+    imageAlt: 'Navy unstructured sportsman hat',
     sizes: SIZE_HAT,
     colors: [NAVY, MIDNIGHT]
   },
   {
-    id: 'p-010',
-    slug: 'swoop-canvas-tote',
-    name: 'Swoop Canvas Tote',
-    price: 22,
+    id: 'p-014',
+    slug: 'flair-bottle-nu-blue',
+    name: 'Flair Bottle — NU Classic Blue',
+    price: 28,
     category: 'accessories',
     collection: 'Swoop Campus',
     description:
-      'Heavyweight cotton canvas tote with reinforced handles, an interior pocket, and a full-bleed Swoop print.',
-    image: PLACEHOLDER('Swoop+Tote', '034C87'),
-    imageAlt: 'Navy canvas tote with Swoop print',
-    sizes: SIZE_HAT,
-    colors: [NAVY, MIDNIGHT, TOUR]
-  },
-  {
-    id: 'p-011',
-    slug: 'pilchuck-tumbler-24',
-    name: 'Pilchuck Tumbler — 24oz',
-    price: 34,
-    category: 'accessories',
-    collection: 'Pilchuck Premium',
-    badge: 'Best Seller',
-    description:
-      'Double-walled 24oz stainless tumbler. Keeps drinks cold for 24 hours, hot for 12. Powder-coated evergreen with white Swoop mark.',
-    image: PLACEHOLDER('Pilchuck+Tumbler', '04505c'),
-    imageAlt: 'Evergreen 24oz tumbler',
-    sizes: ['24oz'],
-    colors: [EVERGREEN, MIDNIGHT, NU_BLUE, WHITE]
-  },
-  {
-    id: 'p-012',
-    slug: 'campus-mug-12',
-    name: 'Campus Mug — 12oz',
-    price: 18,
-    category: 'accessories',
-    collection: 'Swoop Campus',
-    description:
-      'Ceramic mug featuring an illustrated line of the Northwest University campus skyline.',
-    image: PLACEHOLDER('Campus+Mug', '0068bb'),
-    imageAlt: 'NU blue mug with campus skyline',
-    sizes: ['12oz'],
-    colors: [NU_BLUE, WHITE, MIDNIGHT]
+      'Double-walled insulated 17oz water bottle. Keeps drinks cold for 24 hours. Leak-proof lid.',
+    image: IMG('Flair-Bottle-NU-Classic-Blue.jpg'),
+    imageAlt: 'NU Classic Blue insulated water bottle',
+    sizes: ['17oz'],
+    colors: [NU_BLUE, NAVY, WHITE]
   }
 ]
 
