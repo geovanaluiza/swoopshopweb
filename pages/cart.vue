@@ -1,6 +1,24 @@
 <script setup lang="ts">
 const { items, subtotal, remove, updateQty } = useCart()
 const { formatPrice } = useProducts()
+const { enabled, checkout, checkingOut } = useShopifyCart()
+const error = ref('')
+
+const canShopifyCheckout = computed(() =>
+  enabled.value && items.value.length > 0 && items.value.every(it => it.variantId)
+)
+
+const goToShopifyCheckout = async () => {
+  error.value = ''
+  try {
+    const url = await checkout(
+      items.value.map(it => ({ variantId: it.variantId!, qty: it.qty }))
+    )
+    window.location.href = url
+  } catch (e: any) {
+    error.value = e?.message ?? 'Could not start checkout. Please try again.'
+  }
+}
 </script>
 
 <template>
@@ -8,7 +26,7 @@ const { formatPrice } = useProducts()
     <p class="eyebrow">Your bag</p>
     <h1>{{ items.length === 0 ? 'Your bag is empty' : 'Your bag' }}</h1>
     <p v-if="items.length > 0" style="color: var(--muted-fg); margin-bottom: var(--space-7);">
-      {{ items.length }} {{ items.length === 1 ? 'item' : 'items' }} · ready for pickup at the Merdian Building.
+      {{ items.length }} {{ items.length === 1 ? 'item' : 'items' }} · ready for pickup at the Student Center – Pecota.
     </p>
 
     <div v-if="items.length === 0" class="empty-cart">
@@ -44,13 +62,23 @@ const { formatPrice } = useProducts()
         <div class="summary-row total"><span>Total</span><strong>{{ formatPrice(subtotal) }}</strong></div>
 
         <div class="pickup-info">
-          <strong>Pickup at the Merdian Building</strong>
+          <strong>Pickup at the Student Center – Pecota</strong>
           5520 108th Ave NE · Kirkland WA 98033<br />
           Mon–Fri · 9:00 AM – 5:00 PM<br />
           Saturday · 10:00 AM – 2:00 PM
         </div>
 
-        <NuxtLink to="/checkout" class="btn btn-primary btn-block btn-checkout">Continue to pickup details →</NuxtLink>
+        <button
+          v-if="canShopifyCheckout"
+          type="button"
+          class="btn btn-primary btn-block btn-checkout"
+          :disabled="checkingOut"
+          @click="goToShopifyCheckout"
+        >
+          {{ checkingOut ? 'Preparing checkout…' : 'Checkout — pickup only →' }}
+        </button>
+        <NuxtLink v-else to="/checkout" class="btn btn-primary btn-block btn-checkout">Continue to pickup details →</NuxtLink>
+        <p v-if="error" style="color: #b3261e; font-size: var(--font-size-1); text-align: center; margin-top: 10px;">{{ error }}</p>
         <p style="text-align: center; margin-top: 16px;">
           <NuxtLink to="/" style="color: var(--nu-blue); font-weight: 700; font-size: var(--font-size-2);">Continue shopping</NuxtLink>
         </p>

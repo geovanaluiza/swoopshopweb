@@ -6,7 +6,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Official Northwest University apparel, headwear, and accessories. Pickup only on campus at the Merdian Building.'
+      content: 'Official Northwest University apparel, headwear, and accessories. Pickup only on campus at the Student Center – Pecota.'
     }
   ]
 })
@@ -28,7 +28,7 @@ useHead({
           </h1>
           <p class="hero-lede">
             Official NU apparel and headwear — pickup only, right here at the
-            Merdian Building. New drops every month.
+            Student Center – Pecota. New drops every month.
           </p>
           <div class="hero-actions">
             <a href="#shop" class="btn btn-primary">Shop the new drop</a>
@@ -43,7 +43,7 @@ useHead({
             </span>
             <div>
               <strong>Pickup only</strong>
-              <span>Merdian Building · Mon–Fri 9–5</span>
+              <span>Student Center – Pecota · Mon–Fri 9–5</span>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ useHead({
       <div class="marquee-track">
         <span v-for="i in 2" :key="i" style="display: contents;">
           <span class="marquee-item"><span class="dot"></span>Official NU Store</span>
-          <span class="marquee-item"><span class="dot"></span>Pickup only · Merdian Building</span>
+          <span class="marquee-item"><span class="dot"></span>Pickup only · Student Center – Pecota</span>
           <span class="marquee-item"><span class="dot"></span>New drops every month</span>
           <span class="marquee-item"><span class="dot"></span>Fall 2026 collection</span>
           <span class="marquee-item"><span class="dot"></span>Ready in 1 hour</span>
@@ -82,7 +82,7 @@ useHead({
     <!-- TRUST -->
     <section class="trust">
       <div class="container trust-grid">
-        <div class="trust-item"><strong>Pickup only</strong><span>On campus · Merdian Building</span></div>
+        <div class="trust-item"><strong>Pickup only</strong><span>On campus · Student Center – Pecota</span></div>
         <div class="trust-item"><strong>Ready in 1h</strong><span>During pickup windows</span></div>
         <div class="trust-item"><strong>Officially licensed</strong><span>All Northwest University</span></div>
         <div class="trust-item"><strong>30-day returns</strong><span>Bring it back, no questions</span></div>

@@ -16,7 +16,7 @@ const STORAGE_KEY = 'swoopshop.checkout.v1'
 
 export const PICKUP_INFO = {
   name: 'SwoopShop Pickup Window',
-  address: 'Merdian Building, 5520 108th Ave NE, Kirkland WA 98033',
+  address: 'Student Center – Pecota, 5520 108th Ave NE, Kirkland WA 98033',
   hours: [
     'Mon–Fri · 9:00 AM – 5:00 PM',
     'Saturday · 10:00 AM – 2:00 PM',

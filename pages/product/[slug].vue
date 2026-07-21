@@ -16,7 +16,20 @@ const { add } = useCart()
 const onAdd = () => {
   if (!product.value) return
   const variant = [size.value, color.value?.name].filter(Boolean).join(' · ')
-  add(product.value, variant)
+
+  // Resolve the Shopify variant matching the selected size/color
+  const shopifyProduct = product.value as { variants?: { id: string; size?: string; color?: string; available: boolean }[]; variantId?: string }
+  let variantId = shopifyProduct.variantId
+  if (shopifyProduct.variants?.length) {
+    const match = shopifyProduct.variants.find(v =>
+      (!v.size || v.size === size.value) &&
+      (!v.color || v.color === color.value?.name) &&
+      v.available
+    ) ?? shopifyProduct.variants.find(v => v.available)
+    if (match) variantId = match.id
+  }
+
+  add({ ...product.value, variantId }, variant)
   added.value = true
   setTimeout(() => (added.value = false), 1800)
 }
@@ -102,7 +115,7 @@ useHead(() => ({
             </span>
             <div>
               <strong>Pickup only</strong>
-              Pick up at the Merdian Building, Mon–Fri 9–5. We'll text you when it's ready.
+              Pick up at the Student Center – Pecota, Mon–Fri 9–5. We'll text you when it's ready.
             </div>
           </div>
         </div>

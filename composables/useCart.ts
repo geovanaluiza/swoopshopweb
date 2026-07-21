@@ -7,6 +7,7 @@ interface CartItem {
   image: string
   qty: number
   variant?: string
+  variantId?: string
 }
 
 const STORAGE_KEY = 'swoopshop.cart.v1'
@@ -39,7 +40,7 @@ export const useCart = () => {
   const buildKey = (id: string, variant?: string) =>
     `${id}${variant ? `::${variant}` : ''}`
 
-  const add = (product: { id: string; slug: string; name: string; price: number; image: string }, variant?: string) => {
+  const add = (product: { id: string; slug: string; name: string; price: number; image: string; variantId?: string }, variant?: string) => {
     const key = buildKey(product.id, variant)
     const existing = items.value.find((it) => it.key === key)
     if (existing) {
@@ -53,7 +54,8 @@ export const useCart = () => {
         price: product.price,
         image: product.image,
         qty: 1,
-        variant
+        variant,
+        variantId: product.variantId
       })
     }
     persist()

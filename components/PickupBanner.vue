@@ -10,7 +10,7 @@ import { PICKUP_INFO } from '~/composables/useCheckout'
         <h2 class="pickup-title">You pick it up. We make it easy.</h2>
         <p class="pickup-text">
           SwoopShop is on-campus only. We'll text you when your order is ready — usually within one business
-          hour during pickup windows. Bring a photo ID to the Merdian Building.
+          hour during pickup windows. Bring a photo ID to the Student Center – Pecota.
         </p>
       </div>
 

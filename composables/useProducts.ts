@@ -251,12 +251,19 @@ export const PRODUCTS: Product[] = [
 ]
 
 export const useProducts = () => {
-  const list = (category?: ProductCategory) =>
-    category ? PRODUCTS.filter((p) => p.category === category) : PRODUCTS
+  const { products: shopifyProducts } = useShopifyProducts()
 
-  const featured = () => PRODUCTS.filter((p) => p.badge).slice(0, 4)
-  const byCollection = (name: string) => PRODUCTS.filter((p) => p.collection === name)
-  const find = (slug: string) => PRODUCTS.find((p) => p.slug === slug)
+  // Shopify catalog takes over when loaded; local catalog is the fallback.
+  const catalog = computed(() =>
+    shopifyProducts.value.length ? shopifyProducts.value : PRODUCTS
+  )
+
+  const list = (category?: ProductCategory) =>
+    category ? catalog.value.filter((p) => p.category === category) : catalog.value
+
+  const featured = () => catalog.value.filter((p) => p.badge).slice(0, 4)
+  const byCollection = (name: string) => catalog.value.filter((p) => p.collection === name)
+  const find = (slug: string) => catalog.value.find((p) => p.slug === slug)
 
   const formatPrice = (value: number) =>
     new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value)

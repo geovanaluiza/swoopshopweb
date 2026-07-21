@@ -30,7 +30,7 @@ const navLinks = [
     <div class="topbar">
       <div class="container topbar-inner">
         <span class="topbar-dot" aria-hidden="true" />
-        <span><strong>Pickup only</strong> · Merdian Building · Mon–Fri 9–5</span>
+        <span><strong>Pickup only</strong> · Student Center – Pecota · Mon–Fri 9–5</span>
         <a href="/#pickup">See pickup details</a>
       </div>
     </div>

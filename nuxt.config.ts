@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Official Northwest University apparel, headwear, and accessories. Pickup only on campus at the Merdian Building.'
+            'Official Northwest University apparel, headwear, and accessories. Pickup only on campus at the Student Center – Pecota.'
         },
         { name: 'theme-color', content: '#0068bb' },
         { property: 'og:title', content: 'SwoopShop · Official Northwest University Store' },
@@ -37,6 +37,16 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/tokens.css', '~/assets/css/shop.css'],
+
+  runtimeConfig: {
+    public: {
+      // Shopify Storefront API — set in .env:
+      //   NUXT_PUBLIC_SHOPIFY_DOMAIN=your-store.myshopify.com
+      //   NUXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN=shpat_public_token
+      shopifyDomain: process.env.NUXT_PUBLIC_SHOPIFY_DOMAIN ?? '',
+      shopifyStorefrontToken: process.env.NUXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN ?? '',
+    }
+  },
 
   // Static-site generation so the storefront can be deployed as a plain static site.
   nitro: {

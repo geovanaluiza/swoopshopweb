@@ -106,7 +106,7 @@ const slotLabel = (id: string) => {
 
           <div class="pickup-info" style="margin: var(--size-5) 0 0;">
             <strong>Pay when you pick up</strong>
-            Card or cash accepted at the Merdian Building pickup window.
+            Card or cash accepted at the Student Center – Pecota pickup window.
           </div>
         </div>
       </aside>

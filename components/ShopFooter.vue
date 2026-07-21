@@ -18,7 +18,7 @@ const help = [
 ]
 
 const contact = {
-  address: 'Merdian Building, 5520 108th Ave NE, Kirkland WA 98033',
+  address: 'Student Center – Pecota, 5520 108th Ave NE, Kirkland WA 98033',
   phone: '(425) 555-0142',
   email: 'store@northwestu.edu',
   hours: [
