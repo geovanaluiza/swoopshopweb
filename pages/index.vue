@@ -65,6 +65,20 @@ useHead({
       </div>
     </section>
 
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span v-for="i in 2" :key="i" style="display: contents;">
+          <span class="marquee-item"><span class="dot"></span>Official NU Store</span>
+          <span class="marquee-item"><span class="dot"></span>Pickup only · Merdian Building</span>
+          <span class="marquee-item"><span class="dot"></span>New drops every month</span>
+          <span class="marquee-item"><span class="dot"></span>Fall 2026 collection</span>
+          <span class="marquee-item"><span class="dot"></span>Ready in 1 hour</span>
+          <span class="marquee-item"><span class="dot"></span>Go Eagles</span>
+        </span>
+      </div>
+    </div>
+
     <!-- TRUST -->
     <section class="trust">
       <div class="container trust-grid">

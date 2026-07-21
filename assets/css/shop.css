@@ -788,15 +788,16 @@ legend { padding: 0; }
    PICKUP BANNER (cream to nav)
    ============================================================= */
 .pickup-banner {
-  background: var(--nu-midnight);
-  color: #fff;
+  background: #ffbc2d;
+  color: var(--nu-midnight);
   position: relative;
   overflow: hidden;
 }
 .pickup-banner::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(70% 80% at 90% 0%, rgba(0,104,187,.4), transparent 65%);
+  background: radial-gradient(70% 80% at 90% 0%, rgba(251,217,69,.55), transparent 65%),
+              radial-gradient(50% 60% at 0% 100%, rgba(133,117,78,.22), transparent 70%);
   pointer-events: none;
 }
 .pickup-inner {
@@ -809,29 +810,29 @@ legend { padding: 0; }
   .pickup-inner { grid-template-columns: 1fr 1fr; gap: var(--space-9); align-items: center; }
 }
 .pickup-title {
-  font-family: var(--font-family-serif);
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-weight: 800;
   font-size: var(--headline-2);
   letter-spacing: var(--letter-spacing-3);
-  color: #fff;
+  color: var(--nu-midnight);
   margin: 0 0 var(--size-4);
 }
-.pickup-text { color: rgba(255,255,255,.78); line-height: var(--line-height-4); font-size: var(--font-size-3); }
+.pickup-text { color: rgba(0,23,41,.78); line-height: var(--line-height-4); font-size: var(--font-size-3); }
 .pickup-card {
   display: grid;
   gap: var(--size-4);
   padding: var(--size-6);
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: var(--border-radius-7);
+  background: rgba(0,23,41,.07);
+  border: 1px solid rgba(0,23,41,.14);
+  border-radius: var(--border-radius-8);
   backdrop-filter: blur(10px);
 }
 .pickup-card-head {
   display: flex; align-items: center; gap: 12px;
-  font-family: var(--font-family-serif);
+  font-family: var(--font-display);
   font-size: var(--headline-1);
-  color: var(--nu-tour);
-  font-weight: 700;
+  color: var(--nu-midnight);
+  font-weight: 800;
 }
 .pickup-grid {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -840,21 +841,21 @@ legend { padding: 0; }
 .pickup-grid div {
   display: flex; flex-direction: column; gap: 2px;
   padding: var(--size-3) var(--size-4);
-  border-radius: var(--border-radius-5);
-  background: rgba(255,255,255,.05);
+  border-radius: var(--border-radius-6);
+  background: rgba(255,255,255,.45);
 }
 .pickup-grid strong {
   display: block;
-  font-family: var(--font-family-serif);
+  font-family: var(--font-display);
   font-size: var(--font-size-4);
-  color: #fff;
-  font-weight: 700;
+  color: var(--nu-midnight);
+  font-weight: 800;
 }
 .pickup-grid span {
   font-size: var(--font-size-1);
   letter-spacing: var(--letter-spacing-4);
   text-transform: uppercase;
-  color: rgba(255,255,255,.6);
+  color: rgba(0,23,41,.6);
   font-weight: 700;
 }
 

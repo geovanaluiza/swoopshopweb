@@ -6,7 +6,7 @@ import { PICKUP_INFO } from '~/composables/useCheckout'
   <section id="pickup" class="pickup-banner">
     <div class="container pickup-inner">
       <div>
-        <p class="eyebrow" style="color: var(--nu-tour);">Pickup only</p>
+        <p class="eyebrow" style="color: var(--nu-navy);">Pickup only</p>
         <h2 class="pickup-title">You pick it up. We make it easy.</h2>
         <p class="pickup-text">
           SwoopShop is on-campus only. We'll text you when your order is ready — usually within one business
@@ -18,7 +18,7 @@ import { PICKUP_INFO } from '~/composables/useCheckout'
         <div class="pickup-card-head">
           <span>{{ PICKUP_INFO.name }}</span>
         </div>
-        <p style="color: rgba(255,255,255,.7); margin: 0;">{{ PICKUP_INFO.address }}</p>
+        <p style="color: rgba(0,23,41,.7); margin: 0;">{{ PICKUP_INFO.address }}</p>
         <div class="pickup-grid">
           <div v-for="(line, i) in PICKUP_INFO.hours" :key="line">
             <strong>{{ line.split('·')[0] }}</strong>
