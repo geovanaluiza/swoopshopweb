@@ -106,4 +106,13 @@
   /* Accents */
   --price-color: var(--nu-midnight);
   --sale-color: var(--nu-navy);
+
+  /* 2026/27 display type */
+  --font-display: 'Bricolage Grotesque', var(--font-family-sans-serif);
+
+  /* Glass / modern surfaces */
+  --glass-light: rgba(255, 255, 255, .72);
+  --glass-border: rgba(255, 255, 255, .5);
+  --glow-gold: 0 8px 32px rgba(251, 217, 69, .4);
+  --glow-blue: 0 8px 32px rgba(0, 104, 187, .35);
 }
