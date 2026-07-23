@@ -554,16 +554,16 @@ legend { padding: 0; }
 
 /* Large photo — left, 4:5 portrait, ~60% width */
 .hero-tile-lg {
-  flex: 0 0 62%;
+  flex: 0 0 72%;
   aspect-ratio: 4 / 5;
   position: relative;
   z-index: 2;
-  margin-right: -18px; /* overlap onto right photos */
+  margin-right: -20px; /* overlap onto right photos */
 }
 
 /* Right column — 2 small photos stacked */
 .hero-tile-right {
-  flex: 0 0 42%;
+  flex: 0 0 32%;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -572,7 +572,7 @@ legend { padding: 0; }
 
 /* Small photos — 1:1 square */
 .hero-tile-sm {
-  width: 88%;
+  width: 95%;
   aspect-ratio: 1 / 1;
   position: relative;
   z-index: 1;
@@ -619,9 +619,9 @@ legend { padding: 0; }
   .hero-tile-lg {
     flex: none;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 2;
     margin-right: 0;
-    margin-bottom: -12px;
+    margin-bottom: -14px;
     z-index: 3;
   }
   .hero-tile-right {
@@ -631,7 +631,7 @@ legend { padding: 0; }
   }
   .hero-tile-sm {
     flex: 1;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 4;
   }
   .hero-tile-rotated {
     transform: rotate(-1.5deg);
