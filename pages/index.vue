@@ -49,7 +49,15 @@ useHead({
         </div>
 
         <div class="hero-visual" aria-hidden="true">
-          <img src="/shop/WW_2025_Day1-2683.jpg" alt="" class="hero-photo" />
+          <div class="hero-tile">
+            <img src="/shop/WW_2025_Day1-2683.jpg" alt="" class="hero-photo" />
+          </div>
+          <div class="hero-tile">
+            <img src="/shop/WW_2025_Day1-2660.jpg" alt="" class="hero-photo" />
+          </div>
+          <div class="hero-tile">
+            <img src="/shop/WW_2025_Day1-1121.jpg" alt="" class="hero-photo" />
+          </div>
         </div>
       </div>
     </section>
