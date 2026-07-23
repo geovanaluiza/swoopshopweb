@@ -49,18 +49,7 @@ useHead({
         </div>
 
         <div class="hero-visual" aria-hidden="true">
-          <div class="hero-tile hero-tile-lg">
-            <img src="/shop/Hanes-Hoodie-NU-Royal.jpg" alt="" />
-            <span class="hero-tile-tag">Best Seller</span>
-          </div>
-          <div class="hero-tile">
-            <img src="/shop/Knit-Beanie-Navy.jpg" alt="" />
-            <span class="hero-tile-tag">New</span>
-          </div>
-          <div class="hero-tile">
-            <img src="/shop/Legacy-Twill-Eagles-Stone-Navy.jpg" alt="" />
-            <span class="hero-tile-tag">Alumni</span>
-          </div>
+          <img src="/shop/WW_2025_Day1-2683.jpg" alt="" class="hero-photo" />
         </div>
       </div>
     </section>

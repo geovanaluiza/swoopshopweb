@@ -540,22 +540,18 @@ legend { padding: 0; }
 }
 
 .hero-visual {
-  position: relative;
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 16px;
-  aspect-ratio: 5 / 6;
+  align-items: stretch;
 }
-.hero-tile {
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: var(--border-radius-8);
-  overflow: hidden;
-  background: var(--nu-powder);
-  position: relative;
   box-shadow: var(--box-shadow-6);
+  aspect-ratio: 3 / 4;
+  max-height: 520px;
 }
-.hero-tile img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-.hero-tile-lg { grid-row: span 2; }
 .hero-tile-tag {
   position: absolute;
   top: 14px; left: 14px;
