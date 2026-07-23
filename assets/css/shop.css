@@ -550,26 +550,26 @@ legend { padding: 0; }
 
 .hero-stack {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 0;
   position: relative;
 }
 
-/* Large photo — left, 4:5 portrait, ~60% width */
+/* Large photo — left, 4:5 portrait */
 .hero-tile-lg {
-  flex: 0 0 80%;
+  flex: 0 0 72%;
   aspect-ratio: 4 / 5;
   position: relative;
   z-index: 2;
   margin-right: -24px; /* overlap onto right photos */
 }
 
-/* Right column — 2 small photos stacked */
+/* Right column — 2 small photos stacked, takes remaining space */
 .hero-tile-right {
-  flex: 0 0 24%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   align-items: flex-start;
 }
 
