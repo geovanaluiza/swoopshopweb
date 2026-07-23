@@ -541,22 +541,103 @@ legend { padding: 0; }
 
 .hero-visual {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
   align-items: stretch;
 }
-.hero-tile {
-  border-radius: var(--border-radius-8);
-  overflow: hidden;
-  background: var(--nu-powder);
-  box-shadow: var(--box-shadow-6);
+
+.hero-stack {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  position: relative;
 }
+
+/* Large photo — left, 4:5 portrait, ~60% width */
+.hero-tile-lg {
+  flex: 0 0 62%;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  z-index: 2;
+  margin-right: -18px; /* overlap onto right photos */
+}
+
+/* Right column — 2 small photos stacked */
+.hero-tile-right {
+  flex: 0 0 42%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+/* Small photos — 1:1 square */
+.hero-tile-sm {
+  width: 88%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Scrapbook rotation on bottom-right small photo */
+.hero-tile-rotated {
+  transform: rotate(2.5deg);
+  z-index: 3;
+}
+.hero-tile-rotated:hover {
+  transform: rotate(2.5deg) translateY(-3px);
+}
+
+/* Shared tile styles */
+.hero-tile {
+  border-radius: var(--border-radius-6);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 23, 41, .22), 0 2px 6px rgba(0, 23, 41, .12);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+.hero-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0, 23, 41, .28), 0 4px 10px rgba(0, 23, 41, .16);
+}
+.hero-tile-rotated:hover {
+  transform: rotate(2.5deg) translateY(-4px);
+}
+
 .hero-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
   display: block;
+}
+
+/* Mobile — stack all 3 vertically */
+@media (max-width: 639px) {
+  .hero-stack {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-tile-lg {
+    flex: none;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    margin-right: 0;
+    margin-bottom: -12px;
+    z-index: 3;
+  }
+  .hero-tile-right {
+    flex-direction: row;
+    width: 100%;
+    gap: 12px;
+  }
+  .hero-tile-sm {
+    flex: 1;
+    aspect-ratio: 1 / 1;
+  }
+  .hero-tile-rotated {
+    transform: rotate(-1.5deg);
+  }
+  .hero-tile-rotated:hover {
+    transform: rotate(-1.5deg) translateY(-3px);
+  }
 }
 .hero-tile-tag {
   position: absolute;
