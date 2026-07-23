@@ -161,6 +161,9 @@ legend { padding: 0; }
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
+.container--hero {
+  max-width: 1280px;
+}
 
 .eyebrow {
   font-family: var(--font-family-sans-serif);
@@ -468,7 +471,7 @@ legend { padding: 0; }
   align-items: center;
 }
 @media (min-width: 1120px) {
-  .hero-inner { grid-template-columns: 1.05fr 1fr; gap: var(--space-9); }
+  .hero-inner { grid-template-columns: 0.85fr 1.3fr; gap: var(--space-9); }
 }
 .hero-eyebrow {
   display: inline-flex;
@@ -554,16 +557,16 @@ legend { padding: 0; }
 
 /* Large photo — left, 4:5 portrait, ~60% width */
 .hero-tile-lg {
-  flex: 0 0 72%;
+  flex: 0 0 80%;
   aspect-ratio: 4 / 5;
   position: relative;
   z-index: 2;
-  margin-right: -20px; /* overlap onto right photos */
+  margin-right: -24px; /* overlap onto right photos */
 }
 
 /* Right column — 2 small photos stacked */
 .hero-tile-right {
-  flex: 0 0 32%;
+  flex: 0 0 24%;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -572,7 +575,7 @@ legend { padding: 0; }
 
 /* Small photos — 1:1 square */
 .hero-tile-sm {
-  width: 95%;
+  width: 100%;
   aspect-ratio: 1 / 1;
   position: relative;
   z-index: 1;

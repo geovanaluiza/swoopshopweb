@@ -16,7 +16,7 @@ useHead({
   <div>
     <!-- HERO -->
     <section class="hero">
-      <div class="container hero-inner">
+      <div class="container container--hero hero-inner">
         <div>
           <span class="hero-eyebrow">
             <span class="topbar-dot" style="background: var(--nu-blue);" />
