@@ -499,6 +499,7 @@ legend { padding: 0; }
   .hero-title { font-size: var(--headline-5); }
 }
 .hero-italic { font-style: italic; color: var(--nu-blue); font-weight: 400; }
+.hero-line { white-space: nowrap; }
 .hero-lede {
   font-size: var(--font-size-4);
   color: #1f475f;

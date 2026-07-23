@@ -23,7 +23,7 @@ useHead({
             Fall drop · 2026
           </span>
           <h1 class="hero-title">
-            Eagles gear up.<br />
+            <span class="hero-line">Eagles gear up.</span><br />
             <span class="hero-italic">The whole flock does.</span>
           </h1>
           <p class="hero-lede">
