@@ -548,41 +548,46 @@ legend { padding: 0; }
   align-items: stretch;
 }
 
+/* Clean scrapbook grid:
+   - Large photo spans 2 rows on the left
+   - Two small photos stack on the right
+   - Heights always match (grid rows share the large photo's height) */
 .hero-stack {
   display: grid;
-  grid-template-columns: 62% 1fr;
-  align-items: stretch;
-  position: relative;
-}
-
-/* Large photo — left, 4:5 portrait, defines the stack height */
-.hero-tile-lg {
-  aspect-ratio: 4 / 5;
-  position: relative;
-  z-index: 2;
-  margin-right: -24px; /* overlap onto right photos */
-}
-
-/* Right column — 2 photos fill the exact same height as the large one */
-.hero-tile-right {
-  display: grid;
+  grid-template-columns: 1.55fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 16px;
-  min-height: 0;
+  position: relative;
 }
 
-/* Small photos — fill each row (lands nearly square given the 62/38 split) */
-.hero-tile-sm {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
+/* Large photo — left, spans both rows, 4:5 portrait */
+.hero-tile-lg {
+  grid-row: 1 / 3;
+  grid-column: 1;
+  aspect-ratio: 4 / 5;
   position: relative;
   z-index: 1;
 }
 
-/* Scrapbook rotation on bottom-right small photo */
+/* Right column photos */
+.hero-tile-right {
+  display: contents; /* children participate directly in hero-stack grid */
+}
+.hero-tile-sm {
+  grid-column: 2;
+  position: relative;
+  z-index: 2;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero-tile-right .hero-tile-sm:first-child { grid-row: 1; }
+.hero-tile-right .hero-tile-sm:last-child  { grid-row: 2; }
+
+/* Scrapbook rotation + slight overlap on the bottom-right photo */
 .hero-tile-rotated {
   transform: rotate(2.5deg);
+  margin-left: -20px; /* overlaps onto the large photo */
   z-index: 3;
 }
 .hero-tile-rotated:hover {
@@ -615,26 +620,23 @@ legend { padding: 0; }
 /* Mobile — stack all 3 vertically */
 @media (max-width: 639px) {
   .hero-stack {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
   }
   .hero-tile-lg {
-    width: 100%;
+    grid-row: 1;
+    grid-column: 1 / 3;
     aspect-ratio: 3 / 2;
-    margin-right: 0;
-    margin-bottom: -14px;
-    z-index: 3;
   }
-  .hero-tile-right {
-    grid-template-rows: none;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
+  .hero-tile-right .hero-tile-sm:first-child { grid-row: 2; grid-column: 1; }
+  .hero-tile-right .hero-tile-sm:last-child  { grid-row: 2; grid-column: 2; }
   .hero-tile-sm {
     aspect-ratio: 3 / 4;
     height: auto;
   }
   .hero-tile-rotated {
     transform: rotate(-1.5deg);
+    margin-left: 0;
   }
   .hero-tile-rotated:hover {
     transform: rotate(-1.5deg) translateY(-3px);
