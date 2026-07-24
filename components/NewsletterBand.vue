@@ -16,7 +16,7 @@ const onSubmit = () => {
       <div>
         <p class="eyebrow">Join the flock</p>
         <h2 style="margin-top: 12px;">10% off your first pickup order.</h2>
-        <p style="color: var(--muted-fg); margin-top: 12px; max-width: 52ch;">
+        <p class="newsletter-sub" style="margin-top: 12px; max-width: 52ch;">
           New drops, restocks, and exclusive student-only deals — delivered twice a month.
         </p>
       </div>
@@ -29,7 +29,7 @@ const onSubmit = () => {
           required
           placeholder="you@email.com"
         />
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-secondary">
           {{ submitted ? 'Welcome aboard ✦' : 'Get my code' }}
         </button>
       </form>
