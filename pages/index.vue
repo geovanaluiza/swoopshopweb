@@ -27,8 +27,8 @@ useHead({
             <span class="hero-italic">The whole flock does.</span>
           </h1>
           <p class="hero-lede">
-            Official NU apparel and headwear — pickup only, right here at the
-            Student Center – Pecota. New drops every month.
+            Official NU apparel and headwear, pickup only, right here at the
+            Student Center – Pecota.
           </p>
           <div class="hero-actions">
             <a href="#shop" class="btn btn-primary">Shop the new drop</a>
