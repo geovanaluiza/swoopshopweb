@@ -241,6 +241,138 @@ legend { padding: 0; }
 .btn-sm { padding: 10px 18px; font-size: var(--font-size-1); }
 .btn-block { width: 100%; padding: 16px 24px; }
 
+/* =============================================================
+   MODERN PASS — more NU Blue + Tour Yellow, pill shapes, glows
+   ============================================================= */
+
+/* All buttons → pill shape, sportier tracking */
+.btn {
+  border-radius: var(--border-radius-10);
+  letter-spacing: var(--letter-spacing-7);
+  padding: 16px 28px;
+}
+.btn-sm { border-radius: var(--border-radius-10); padding: 10px 20px; }
+
+/* Hero primary CTA → yellow on blue (highest contrast pop) */
+.hero .btn-primary {
+  background: var(--nu-tour);
+  color: var(--nu-midnight);
+  box-shadow: 0 10px 28px rgba(251, 217, 69, .4);
+}
+.hero .btn-primary:hover {
+  background: var(--nu-amber);
+  box-shadow: 0 14px 34px rgba(251, 217, 69, .5);
+}
+
+/* Section titles → yellow marker bar before the title */
+.section-head .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-head .eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--nu-tour);
+  flex: none;
+}
+
+/* Section title accent — last word underline in yellow */
+.section-title {
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--nu-blue), var(--nu-tour));
+}
+
+/* Product cards — blue glow on hover + yellow lift line */
+.product-card:hover {
+  box-shadow: 0 20px 44px rgba(0, 104, 187, .2);
+}
+.product-card:hover::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--nu-tour), var(--nu-blue));
+}
+.product-card { position: relative; overflow: hidden; }
+
+/* Trust items — yellow icon dot */
+.trust-item { position: relative; padding-top: 6px; }
+.trust-item::before {
+  content: '';
+  display: block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--nu-tour);
+  box-shadow: 0 0 0 4px rgba(251, 217, 69, .25);
+  margin-bottom: 6px;
+}
+
+/* Cart badge → yellow (already tour, make it pop harder) */
+.cart-count {
+  background: var(--nu-tour);
+  color: var(--nu-midnight);
+  box-shadow: 0 2px 8px rgba(251, 217, 69, .5);
+}
+
+/* Hero — add a yellow radial accent into the blue */
+.hero {
+  background:
+    radial-gradient(45% 45% at 92% 88%, rgba(251, 217, 69, .18), transparent 65%),
+    radial-gradient(70% 60% at 85% 0%, rgba(20,141,205,.4), transparent 70%),
+    radial-gradient(55% 55% at 0% 100%, rgba(0,23,41,.45), transparent 70%),
+    radial-gradient(40% 40% at 60% 60%, rgba(3,76,135,.35), transparent 70%),
+    var(--nu-blue);
+}
+
+/* Hero pickup card — yellow left border accent */
+.hero-pickup {
+  border-left: 4px solid var(--nu-tour);
+}
+
+/* Eyebrow on dark bands (newsletter/pickup) already tour — punch it up */
+.newsletter .eyebrow,
+.pickup-banner .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(251, 217, 69, .14);
+  border: 1px solid rgba(251, 217, 69, .35);
+}
+
+/* Badges → bolder yellow */
+.badge-new, .badge-limited {
+  box-shadow: 0 4px 12px rgba(251, 217, 69, .4);
+}
+
+/* Collection card CTA → yellow */
+.collection-overlay span { color: var(--nu-tour); }
+
+/* Link arrows → yellow underline */
+.link-arrow {
+  border-bottom-color: var(--nu-tour);
+}
+.link-arrow:hover { color: var(--nu-navy); }
+
+/* Pickup card in dark banner → yellow top accent */
+.pickup-card {
+  border-top: 4px solid var(--nu-tour);
+}
+
+/* Focus ring stays amber — already yellow family ✓ */
+
 .link-arrow {
   display: inline-flex;
   align-items: center;
