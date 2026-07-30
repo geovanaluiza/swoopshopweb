@@ -683,11 +683,10 @@ legend { padding: 0; }
    - Heights always match (grid rows share the large photo's height) */
 .hero-stack {
   display: grid;
-  grid-template-columns: 1.55fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 16px;
+  gap: 12px;
   position: relative;
-  min-height: 420px;
 }
 
 /* Large photo — left, spans both rows */
@@ -696,6 +695,7 @@ legend { padding: 0; }
   grid-column: 1;
   position: relative;
   z-index: 1;
+  aspect-ratio: 4 / 5;
 }
 
 /* Right column photos */
@@ -706,9 +706,7 @@ legend { padding: 0; }
   grid-column: 2;
   position: relative;
   z-index: 2;
-  min-height: 0;
-  width: 100%;
-  height: 100%;
+  aspect-ratio: 1 / 1;
 }
 .hero-tile-right .hero-tile-sm:first-child { grid-row: 1; }
 .hero-tile-right .hero-tile-sm:last-child  { grid-row: 2; }
