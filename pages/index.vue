@@ -91,7 +91,7 @@ useHead({
     </section>
 
     <!-- FEATURED -->
-    <section id="shop" class="section section--powder">
+    <section id="shop" class="section section--blue">
       <div class="container">
         <header class="section-head">
           <div>
@@ -107,12 +107,12 @@ useHead({
       </div>
     </section>
 
-    <CollectionsGrid class="section--white" />
+    <CollectionsGrid class="section--yellow" />
 
     <!-- APPAREL -->
     <CategorySection
       id="apparel"
-      class="section--powder"
+      class="section--blue"
       category="apparel"
       title="Apparel"
       subtitle="Crewnecks, hoodies, tees — every piece is tested on campus before it gets here."
@@ -121,7 +121,7 @@ useHead({
     <!-- HEADWEAR -->
     <CategorySection
       id="headwear"
-      class="section--white"
+      class="section--yellow"
       category="headwear"
       title="Headwear"
       subtitle="Caps and beanies embroidered with the official NU crest."
@@ -131,6 +131,6 @@ useHead({
 
     <NewsletterBand />
 
-    <InstagramGrid class="section--powder" />
+    <InstagramGrid class="section--yellow" />
   </div>
 </template>

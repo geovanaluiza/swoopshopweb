@@ -168,6 +168,32 @@ legend { padding: 0; }
 .section { padding: var(--space-9) 0; }
 .section--white { background: #fff; }
 .section--powder { background: var(--nu-powder); }
+
+/* Bold band variants — text adapts to the background */
+.section--blue {
+  background:
+    radial-gradient(70% 90% at 90% 0%, rgba(20,141,205,.5), transparent 65%),
+    var(--nu-blue);
+}
+.section--blue .section-title,
+.section--blue h2 { color: #fff; }
+.section--blue .section-sub { color: rgba(255,255,255,.82); }
+.section--blue .eyebrow { color: var(--nu-tour); }
+.section--blue .section-title::after { background: var(--nu-tour); }
+.section--blue .link-arrow { color: var(--nu-tour); border-bottom-color: var(--nu-tour); }
+.section--blue .link-arrow:hover { color: #fff; }
+
+.section--yellow {
+  background: var(--nu-tour);
+}
+.section--yellow .section-title,
+.section--yellow h2 { color: var(--nu-midnight); }
+.section--yellow .section-sub { color: rgba(0, 23, 41, .75); }
+.section--yellow .eyebrow { color: var(--nu-navy); }
+.section--yellow .eyebrow::before { background: var(--nu-navy); }
+.section--yellow .section-title::after { background: linear-gradient(90deg, var(--nu-navy), var(--nu-blue)); }
+.section--yellow .link-arrow { color: var(--nu-navy); border-bottom-color: var(--nu-navy); }
+.section--yellow .link-arrow:hover { color: var(--nu-blue); }
 @media (min-width: 1120px) { .section { padding: var(--space-10) 0; } }
 
 .section-head {
@@ -427,33 +453,11 @@ legend { padding: 0; }
   gap: var(--size-4);
   padding: 18px 0;
 }
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
-.brand-mark {
-  display: grid; place-items: center;
-  width: 44px; height: 44px;
-  border-radius: var(--border-radius-5);
-  background: var(--nu-blue);
-  color: #fff;
-  font-family: var(--font-family-serif);
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: 0.04em;
-  box-shadow: 0 6px 14px rgba(0,104,187,.3);
-}
-.brand-text { display: flex; flex-direction: column; line-height: 1.05; }
-.brand-name {
-  font-family: var(--font-family-serif);
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--nu-navy);
-}
-.brand-sub {
-  font-family: var(--font-family-sans-serif);
-  font-size: 10px;
-  letter-spacing: var(--letter-spacing-10);
-  text-transform: uppercase;
-  color: var(--muted-fg);
-  font-weight: 700;
+.brand { display: flex; align-items: center; text-decoration: none; color: inherit; }
+.brand-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .site-nav {

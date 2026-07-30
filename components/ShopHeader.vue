@@ -37,11 +37,7 @@ const navLinks = [
 
     <div class="container site-header-inner">
       <NuxtLink to="/" class="brand" aria-label="SwoopShop home">
-        <span class="brand-mark" aria-hidden="true">SW</span>
-        <span class="brand-text">
-          <span class="brand-name">SwoopShop</span>
-          <span class="brand-sub">Northwest University</span>
-        </span>
+        <img class="brand-img" src="/swoopshop-mast.png" alt="SwoopShop" width="160" height="65" />
       </NuxtLink>
 
       <nav class="site-nav" aria-label="Primary">
