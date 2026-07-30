@@ -600,7 +600,7 @@ legend { padding: 0; }
   align-items: stretch;
 }
 @media (min-width: 1120px) {
-  .hero-inner { grid-template-columns: 0.55fr 1fr; gap: var(--space-8); align-items: stretch; }
+  .hero-inner { grid-template-columns: 0.5fr 1fr; gap: var(--space-8); align-items: stretch; }
 }
 .hero-eyebrow {
   display: inline-flex;
@@ -683,13 +683,14 @@ legend { padding: 0; }
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   position: relative;
+  height: 100vh;
 }
 
 .hero-tile-lg,
 .hero-tile-sm {
   position: relative;
   z-index: 1;
-  aspect-ratio: 3 / 4;
+  height: 100%;
 }
 
 .hero-tile-rotated {
