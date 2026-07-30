@@ -1114,8 +1114,12 @@ legend { padding: 0; }
   gap: var(--space-7);
   padding-bottom: var(--space-7);
 }
-@media (min-width: 640px) { .footer-top { grid-template-columns: 1.4fr repeat(3, 1fr); gap: var(--space-8); } }
-.footer-brand .brand-name { color: #fff; }
+@media (min-width: 640px) { .footer-top { grid-template-columns: 1.5fr 1fr 1fr; gap: var(--space-8); } }
+.footer-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
 .footer-brand p {
   font-size: var(--font-size-2);
   color: rgba(255,255,255,.6);
@@ -1142,24 +1146,6 @@ legend { padding: 0; }
 .footer-col a:hover { color: #fff; }
 .footer-contact p { font-size: var(--font-size-2); color: rgba(255,255,255,.7); }
 .footer-contact strong { color: #fff; display: block; font-family: var(--font-family-serif); }
-
-.footer-social {
-  display: flex; gap: 8px;
-  margin-top: var(--size-4);
-}
-.footer-social a {
-  display: grid; place-items: center;
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.08);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  transition: background var(--transition-5) ease;
-}
-.footer-social a:hover { background: var(--nu-blue); }
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.08);
