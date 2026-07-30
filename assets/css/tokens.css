@@ -4,6 +4,36 @@
    https://northwestu.edu (Design System › Tokens)
    ============================================================= */
 
+/* Redzone — NU athletics display face (self-hosted) */
+@font-face {
+  font-family: 'Redzone';
+  src: url('/fonts/Redzone-MediumReg.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Redzone';
+  src: url('/fonts/Redzone-BoldReg.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Redzone';
+  src: url('/fonts/Redzone-BlackReg.otf') format('opentype');
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Redzone';
+  src: url('/fonts/VTFRedzone-ClassicOblique.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   /* Color */
   --nu-blue:      #0068bb;
@@ -24,7 +54,7 @@
   /* Type */
   --font-family-sans-serif: proxima-nova, ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-family-serif: zenon, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-family-serif: 'Redzone', zenon, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
 
   /* Body scale */
   --font-size-1: clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem);
