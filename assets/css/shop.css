@@ -600,7 +600,7 @@ legend { padding: 0; }
   align-items: stretch;
 }
 @media (min-width: 1120px) {
-  .hero-inner { grid-template-columns: 0.7fr 1.5fr; gap: var(--space-9); align-items: stretch; }
+  .hero-inner { grid-template-columns: 0.55fr 1fr; gap: var(--space-8); align-items: stretch; }
 }
 .hero-eyebrow {
   display: inline-flex;
@@ -687,6 +687,7 @@ legend { padding: 0; }
   grid-template-rows: 1fr 1fr;
   gap: 12px;
   position: relative;
+  min-height: 480px;
 }
 
 /* Large photo — left, spans both rows */
@@ -695,7 +696,6 @@ legend { padding: 0; }
   grid-column: 1;
   position: relative;
   z-index: 1;
-  aspect-ratio: 4 / 5;
 }
 
 /* Right column photos */
@@ -706,7 +706,6 @@ legend { padding: 0; }
   grid-column: 2;
   position: relative;
   z-index: 2;
-  aspect-ratio: 1 / 1;
 }
 .hero-tile-right .hero-tile-sm:first-child { grid-row: 1; }
 .hero-tile-right .hero-tile-sm:last-child  { grid-row: 2; }
@@ -739,8 +738,8 @@ legend { padding: 0; }
 .hero-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center;
   display: block;
 }
 
@@ -748,6 +747,7 @@ legend { padding: 0; }
 @media (max-width: 639px) {
   .hero-stack {
     grid-template-columns: 1fr 1fr;
+    min-height: 280px;
   }
   .hero-tile:last-child {
     grid-column: 1 / 3;
