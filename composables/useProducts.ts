@@ -23,12 +23,10 @@ export interface Product {
 export type ProductCategory =
   | 'apparel'
   | 'headwear'
-  | 'accessories'
 
 export const CATEGORY_LABEL: Record<ProductCategory, string> = {
   apparel: 'Apparel',
-  headwear: 'Headwear',
-  accessories: 'Accessories'
+  headwear: 'Headwear'
 }
 
 const SIZE_CLOTHING = ['XS', 'S', 'M', 'L', 'XL', '2XL']
@@ -76,21 +74,6 @@ export const PRODUCTS: Product[] = [
     imageAlt: 'Heavyweight crewneck fleece in Bering Sea',
     sizes: SIZE_CLOTHING,
     colors: [EVERGREEN, NAVY, GREY]
-  },
-  {
-    id: 'p-003',
-    slug: 'camo-crewneck',
-    name: 'Camo Heavy Crewneck',
-    price: 65,
-    category: 'apparel',
-    collection: 'Eagles Essentials',
-    badge: 'New',
-    description:
-      'Military-inspired heavyweight camo crewneck with embroidered Swoop at the chest.',
-    image: IMG('Cotton-Collective-Crew-Camo.jpg'),
-    imageAlt: 'Camo heavyweight crewneck',
-    sizes: SIZE_CLOTHING,
-    colors: [CAMO]
   },
   {
     id: 'p-004',
@@ -239,7 +222,7 @@ export const PRODUCTS: Product[] = [
     slug: 'flair-bottle-nu-blue',
     name: 'Flair Bottle — NU Classic Blue',
     price: 28,
-    category: 'accessories',
+    category: 'apparel',
     collection: 'Swoop Campus',
     description:
       'Double-walled insulated 17oz water bottle. Keeps drinks cold for 24 hours. Leak-proof lid.',

@@ -7,8 +7,8 @@ const year = new Date().getFullYear()
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="/swoopshop-mast.png" alt="SwoopShop" class="footer-logo" width="140" height="57" />
-          <p>The official storefront of Northwest University.<br />Pickup only · Student Center – Pecota</p>
+          <img src="/swoopshop-mast.jpg" alt="SwoopShop" class="footer-logo" width="140" height="57" />
+          <p>The official storefront of Northwest University.<br />Pickup only · Barton 216</p>
         </div>
 
         <div class="footer-col">
@@ -17,17 +17,17 @@ const year = new Date().getFullYear()
             <li><a href="/">All products</a></li>
             <li><a href="/#apparel">Apparel</a></li>
             <li><a href="/#headwear">Headwear</a></li>
-            <li><a href="/#collections">Collections</a></li>
           </ul>
         </div>
 
         <div class="footer-col footer-contact">
           <h4>Pickup</h4>
-          <p><strong>Student Center – Pecota</strong></p>
-          <p>5520 108th Ave NE</p>
-          <p>Kirkland, WA 98033</p>
-          <p style="margin-top: 12px;">Mon–Fri · 9AM–5PM</p>
-          <p><a href="mailto:store@northwestu.edu">store@northwestu.edu</a></p>
+          <p><strong>Human R. Office</strong></p>
+          <p>Barton Hall 216</p>
+          <p>Kirkland, WA</p>
+          <p style="margin-top: 12px;"><strong>Monday</strong> · 10AM–2PM</p>
+          <p><strong>Friday</strong> · 11:15AM–2PM</p>
+          <p style="margin-top: 12px;"><a href="mailto:store@northwestu.edu">store@northwestu.edu</a></p>
         </div>
       </div>
 

@@ -6,7 +6,8 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Official Northwest University apparel, headwear, and accessories. Pickup only on campus at the Student Center – Pecota.'
+      content:
+        'Official Northwest University apparel and headwear. Pickup only at Human R. Office — Barton 216.'
     }
   ]
 })
@@ -20,18 +21,18 @@ useHead({
         <div>
           <span class="hero-eyebrow">
             <span class="topbar-dot" style="background: var(--nu-blue);" />
-            Fall drop · 2026
+            Northwest University
           </span>
           <h1 class="hero-title">
             <span class="hero-line">Eagles gear up.</span><br />
             <span class="hero-italic">The whole flock does.</span>
           </h1>
           <p class="hero-lede">
-            Official NU apparel and headwear, pickup only, right here at the
-            Student Center – Pecota.
+            Official NU apparel and headwear. Pickup only at the Human R. Office,
+            Barton Hall 216.
           </p>
           <div class="hero-actions">
-            <a href="#shop" class="btn btn-primary">Shop the new drop</a>
+            <a href="#shop" class="btn btn-primary">Shop now</a>
             <a href="#pickup" class="btn btn-ghost">Pickup hours →</a>
           </div>
           <div class="hero-pickup">
@@ -43,7 +44,7 @@ useHead({
             </span>
             <div>
               <strong>Pickup only</strong>
-              <span>Student Center – Pecota · Mon–Fri 9–5</span>
+              <span>Monday 10AM–2PM · Friday 11:15AM–2PM</span>
             </div>
           </div>
         </div>
@@ -71,10 +72,7 @@ useHead({
       <div class="marquee-track">
         <span v-for="i in 2" :key="i" style="display: contents;">
           <span class="marquee-item"><span class="dot"></span>Official NU Store</span>
-          <span class="marquee-item"><span class="dot"></span>Pickup only · Student Center – Pecota</span>
-          <span class="marquee-item"><span class="dot"></span>New drops every month</span>
-          <span class="marquee-item"><span class="dot"></span>Fall 2026 collection</span>
-          <span class="marquee-item"><span class="dot"></span>Ready in 1 hour</span>
+          <span class="marquee-item"><span class="dot"></span>Pickup only · Barton 216</span>
           <span class="marquee-item"><span class="dot"></span>Go Eagles</span>
         </span>
       </div>
@@ -83,10 +81,8 @@ useHead({
     <!-- TRUST -->
     <section class="trust">
       <div class="container trust-grid">
-        <div class="trust-item"><strong>Pickup only</strong><span>On campus · Student Center – Pecota</span></div>
-        <div class="trust-item"><strong>Ready in 1h</strong><span>During pickup windows</span></div>
-        <div class="trust-item"><strong>Officially licensed</strong><span>All Northwest University</span></div>
-        <div class="trust-item"><strong>30-day returns</strong><span>Bring it back, no questions</span></div>
+        <div class="trust-item"><strong>Pickup only</strong><span>Monday 10AM–2PM · Friday 11:15AM–2PM</span></div>
+        <div class="trust-item"><strong>Human R. Office</strong><span>Barton Hall 216 · Kirkland, WA</span></div>
       </div>
     </section>
 
@@ -96,9 +92,9 @@ useHead({
         <header class="section-head">
           <div>
             <p class="eyebrow">Just landed</p>
-            <h2 class="section-title">This week's restocks</h2>
+            <h2 class="section-title">New arrivals</h2>
           </div>
-          <p class="section-sub">Pieces back on the shelf after selling out the first time. Pickup while they last.</p>
+          <p class="section-sub">Official NU apparel and headwear. Pickup at Barton 216.</p>
         </header>
 
         <div class="product-grid">
@@ -107,30 +103,37 @@ useHead({
       </div>
     </section>
 
-    <CollectionsGrid class="section--yellow" />
-
     <!-- APPAREL -->
     <CategorySection
       id="apparel"
-      class="section--blue"
+      class="section--yellow"
       category="apparel"
       title="Apparel"
-      subtitle="Crewnecks, hoodies, tees — every piece is tested on campus before it gets here."
+      subtitle="Crewnecks, hoodies, and tees — officially licensed for Northwest University."
     />
 
     <!-- HEADWEAR -->
     <CategorySection
       id="headwear"
-      class="section--yellow"
+      class="section--blue"
       category="headwear"
       title="Headwear"
       subtitle="Caps and beanies embroidered with the official NU crest."
     />
 
-    <PickupBanner />
-
-    <NewsletterBand />
-
-    <InstagramGrid class="section--yellow" />
+    <!-- PICKUP INFO -->
+    <section id="pickup" class="section section--yellow">
+      <div class="container" style="text-align: center; padding: var(--space-9) 0;">
+        <p class="eyebrow">Pickup</p>
+        <h2 class="section-title" style="margin-bottom: var(--space-5);">Human R. Office — Barton 216</h2>
+        <p style="font-size: var(--font-size-5); color: var(--nu-midnight); margin-bottom: var(--space-5);">
+          <strong>Monday</strong> · 10:00 AM – 2:00 PM<br />
+          <strong>Friday</strong> · 11:15 AM – 2:00 PM
+        </p>
+        <p style="font-size: var(--font-size-3); color: rgba(0,23,41,.7);">
+          Questions? Email <a href="mailto:store@northwestu.edu" style="color: var(--nu-navy); font-weight: 700;">store@northwestu.edu</a>
+        </p>
+      </div>
+    </section>
   </div>
 </template>

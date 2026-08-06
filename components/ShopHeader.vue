@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-const { count } = useCart()
 const scrolled = ref(false)
 const mobileNav = ref(false)
 const searchOpen = ref(false)
@@ -19,9 +18,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 const navLinks = [
   { label: 'Apparel', href: '/#apparel' },
   { label: 'Headwear', href: '/#headwear' },
-  { label: 'Accessories', href: '/#accessories' },
-  { label: 'Pickup & Hours', href: '/#pickup' },
-  { label: 'Collections', href: '/#collections' }
+  { label: 'Pickup & Hours', href: '/#pickup' }
 ]
 </script>
 
@@ -30,14 +27,14 @@ const navLinks = [
     <div class="topbar">
       <div class="container topbar-inner">
         <span class="topbar-dot" aria-hidden="true" />
-        <span><strong>Pickup only</strong> · Student Center – Pecota · Mon–Fri 9–5</span>
+        <span><strong>Pickup only</strong> · Mon 10–2 · Fri 11:15–2 · Barton 216</span>
         <a href="/#pickup">See pickup details</a>
       </div>
     </div>
 
     <div class="container site-header-inner">
       <NuxtLink to="/" class="brand" aria-label="SwoopShop home">
-        <img class="brand-img" src="/swoopshop-mast.png" alt="SwoopShop" width="160" height="65" />
+        <img class="brand-img" src="/swoopshop-mast.jpg" alt="SwoopShop" width="160" height="65" />
       </NuxtLink>
 
       <nav class="site-nav" aria-label="Primary">
@@ -59,15 +56,6 @@ const navLinks = [
             <path d="m20 20-3.5-3.5" stroke-linecap="round" />
           </svg>
         </button>
-
-        <NuxtLink to="/cart" class="cart-btn" aria-label="Open cart">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 4h2l2.4 12.3a2 2 0 0 0 2 1.7h8.2a2 2 0 0 0 2-1.6L21 8H6" stroke-linecap="round" stroke-linejoin="round" />
-            <circle cx="10" cy="21" r="1.4" />
-            <circle cx="18" cy="21" r="1.4" />
-          </svg>
-          <span v-if="count > 0" class="cart-count">{{ count }}</span>
-        </NuxtLink>
 
         <button class="icon-btn mobile-only" aria-label="Toggle menu" @click="mobileNav = !mobileNav">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

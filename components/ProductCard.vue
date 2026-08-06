@@ -2,7 +2,6 @@
 import type { Product } from '~/composables/useProducts'
 
 defineProps<{ product: Product }>()
-const { formatPrice } = useProducts()
 </script>
 
 <template>
@@ -17,10 +16,6 @@ const { formatPrice } = useProducts()
     <div class="product-body">
       <p class="product-collection">{{ product.collection }}</p>
       <h3 class="product-title">{{ product.name }}</h3>
-      <p class="product-price">
-        <span v-if="product.compareAt" class="price-compare">{{ formatPrice(product.compareAt) }}</span>
-        <span :class="{ 'price-sale': product.compareAt }">{{ formatPrice(product.price) }}</span>
-      </p>
       <div class="product-swatches" v-if="product.colors && product.colors.length">
         <span
           v-for="c in product.colors.slice(0, 4)"
