@@ -18,6 +18,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 const navLinks = [
   { label: 'Apparel', href: '/#apparel' },
   { label: 'Headwear', href: '/#headwear' },
+  { label: 'Accessories', href: '/#accessories' },
   { label: 'Pickup & Hours', href: '/#pickup' }
 ]
 </script>

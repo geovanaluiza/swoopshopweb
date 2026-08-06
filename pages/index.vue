@@ -121,6 +121,15 @@ useHead({
       subtitle="Caps and beanies embroidered with the official NU crest."
     />
 
+    <!-- ACCESSORIES -->
+    <CategorySection
+      id="accessories"
+      class="section--yellow"
+      category="accessories"
+      title="Accessories"
+      subtitle="Bottles, bags, and more — officially licensed for Northwest University."
+    />
+
     <!-- PICKUP INFO -->
     <section id="pickup" class="section section--yellow">
       <div class="container" style="text-align: center; padding: var(--space-9) 0;">

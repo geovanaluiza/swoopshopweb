@@ -17,6 +17,7 @@ const year = new Date().getFullYear()
             <li><a href="/">All products</a></li>
             <li><a href="/#apparel">Apparel</a></li>
             <li><a href="/#headwear">Headwear</a></li>
+            <li><a href="/#accessories">Accessories</a></li>
           </ul>
         </div>
 

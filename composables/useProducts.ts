@@ -23,10 +23,12 @@ export interface Product {
 export type ProductCategory =
   | 'apparel'
   | 'headwear'
+  | 'accessories'
 
 export const CATEGORY_LABEL: Record<ProductCategory, string> = {
   apparel: 'Apparel',
-  headwear: 'Headwear'
+  headwear: 'Headwear',
+  accessories: 'Accessories'
 }
 
 const SIZE_CLOTHING = ['XS', 'S', 'M', 'L', 'XL', '2XL']
@@ -222,7 +224,7 @@ export const PRODUCTS: Product[] = [
     slug: 'flair-bottle-nu-blue',
     name: 'Flair Bottle — NU Classic Blue',
     price: 28,
-    category: 'apparel',
+    category: 'accessories',
     collection: 'Swoop Campus',
     description:
       'Double-walled insulated 17oz water bottle. Keeps drinks cold for 24 hours. Leak-proof lid.',
